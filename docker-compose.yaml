@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  glpi-db:
+    image: mysql:8.0
+    container_name: glpi-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootglpi
+      MYSQL_DATABASE: glpi
+      MYSQL_USER: glpi
+      MYSQL_PASSWORD: glpi
+    volumes:
+      - glpi-db-data:/var/lib/mysql
+
+  glpi-web:
+    image: juinglpi:latest
+    container_name: glpi-web
+    hostname: glpi
+    ports:
+      - "8080:80"
+    depends_on:
+      - glpi-db
+    volumes:
+      - glpi-web-data:/var/www/html
+
+volumes:
+  glpi-db-data:
+  glpi-web-data:

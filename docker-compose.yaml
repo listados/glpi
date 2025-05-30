@@ -19,8 +19,6 @@ services:
       context: .
     container_name: glpi-web
     hostname: glpi
-    ports:
-      - "49152:80"
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${VIRTUAL_HOST}
@@ -31,11 +29,3 @@ services:
       - glpi-web-data:/var/www/html
     networks:
       - nginx-proxy
-
-volumes:
-  glpi-db-data:
-  glpi-web-data:
-
-networks:
-  nginx-proxy:
-    external: true

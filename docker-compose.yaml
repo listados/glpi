@@ -1,29 +1,41 @@
-version: '3'
+version: '3.7'
 
 services:
   glpi-db:
     image: mysql:8.0
     container_name: glpi-db
     environment:
-      MYSQL_ROOT_PASSWORD: rootglpi
-      MYSQL_DATABASE: glpi
-      MYSQL_USER: glpi
-      MYSQL_PASSWORD: glpi
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - glpi-db-data:/var/lib/mysql
+    networks:
+      - nginx-proxy
 
   glpi-web:
     build:
-      context: .       
+      context: .
     container_name: glpi-web
     hostname: glpi
-    ports:
-      - "8080:80"
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     depends_on:
       - glpi-db
     volumes:
       - glpi-web-data:/var/www/html
+    networks:
+      - nginx-proxy
 
 volumes:
   glpi-db-data:
   glpi-web-data:
+
+networks:
+  nginx-proxy:
+    external: true

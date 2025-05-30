@@ -29,3 +29,11 @@ services:
       - glpi-web-data:/var/www/html
     networks:
       - nginx-proxy
+
+volumes:
+  glpi-db-data:
+  glpi-web-data:
+
+networks:
+  nginx-proxy:
+    external: true

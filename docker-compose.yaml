@@ -18,7 +18,6 @@ services:
     build:
       context: .
     container_name: glpi-web
-    hostname: glpi
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${VIRTUAL_HOST}

@@ -26,9 +26,14 @@ services:
       - glpi-db
     networks:
       - nginx-proxy
+    volumes:
+      - glpi-web-data:/var/www/html
+      - glpi-data-files:/var/glpi/files
 
 volumes:
   glpi-db-data:
+  glpi-web-data:
+  glpi-data-files:
 
 networks:
   nginx-proxy:

@@ -10,7 +10,7 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - glpi-db-data:/var/lib/mysql
+      - /home/volumes/glpi/mysql:/var/lib/mysql
     networks:
       - nginx-proxy
 
@@ -25,13 +25,9 @@ services:
     depends_on:
       - glpi-db
     volumes:
-      - glpi-web-data:/var/www/html
+      - /home/volumes/glpi/php:/var/www/html
     networks:
       - nginx-proxy
-
-volumes:
-  glpi-db-data:
-  glpi-web-data:
 
 networks:
   nginx-proxy:

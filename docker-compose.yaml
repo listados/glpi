@@ -13,7 +13,8 @@ services:
       - glpi-db-data:/var/lib/mysql
 
   glpi-web:
-    image: juinglpi:latest
+    build:
+      context: .       
     container_name: glpi-web
     hostname: glpi
     ports:

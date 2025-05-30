@@ -24,8 +24,6 @@ services:
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     depends_on:
       - glpi-db
-    volumes:
-      - /home/volumes/glpi/php:/var/www/html
     networks:
       - nginx-proxy
 

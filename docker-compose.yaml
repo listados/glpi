@@ -19,7 +19,7 @@ services:
       context: .
     container_name: glpi-web
     hostname: glpi
-    expose:
+    ports:
       - "49152:80"
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}

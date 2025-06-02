@@ -10,7 +10,7 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - glpi-db-data:/var/lib/mysql
+      - /home/volumes/glpi/mysql:/var/lib/mysql
     networks:
       - nginx-proxy
 
@@ -19,22 +19,19 @@ services:
       context: .
     container_name: glpi-web
     environment:
-      - VIRTUAL_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
     depends_on:
       - glpi-db
+    volumes:
+      - ./glpi:/var/www/html
+      - ./glpi/files:/var/www/html/files
+    ports:
+      - "8080:80"
     networks:
       - nginx-proxy
-    volumes:
-      - glpi-web-data:/var/www/html
-      - glpi-data-files:/var/glpi/files
-
-volumes:
-  glpi-db-data:
-  glpi-web-data:
-  glpi-data-files:
 
 networks:
   nginx-proxy:
-    external: true
+    # external: true

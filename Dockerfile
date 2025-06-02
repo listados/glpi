@@ -2,12 +2,13 @@ FROM php:8.3-apache
 
 ENV TZ=America/Fortaleza
 
-# Copia o VirtualHost e os arquivos do GLPI
+# Copia config, fontes do GLPI e o init.sh
 COPY config/000-default.conf /etc/apache2/sites-available/000-default.conf
-COPY glpi /var/www/html
-COPY logos /var/www/html/pics/logos
+COPY glpi /opt/glpi-src
+COPY logos /opt/glpi-src/pics/logos
+COPY init.sh /init.sh
 
-# Instala dependências e extensões PHP necessárias
+# Instala dependências do PHP e configurações do Apache
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         cron \
         zlib1g \
@@ -26,10 +27,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     && sed -i 's/session.cookie_httponly =/session.cookie_httponly = On/' /usr/local/etc/php/php.ini \
     && sed -i 's/;date.timezone =/date.timezone = America\/Fortaleza/' /usr/local/etc/php/php.ini \
-    && chown -R www-data:www-data /var/www/html
+    && chmod +x /init.sh
 
 WORKDIR /var/www/html
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+ENTRYPOINT ["/init.sh"]

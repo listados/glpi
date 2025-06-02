@@ -13,7 +13,6 @@ services:
       - /home/volumes/glpi/mysql:/var/lib/mysql
     networks:
       - nginx-proxy
-
   glpi-web:
     build:
       context: .
@@ -27,11 +26,9 @@ services:
     volumes:
       - ./glpi:/var/www/html
       - ./glpi/files:/var/www/html/files
-    ports:
-      - "8080:80"
     networks:
       - nginx-proxy
 
 networks:
   nginx-proxy:
-    # external: true
+    external: true

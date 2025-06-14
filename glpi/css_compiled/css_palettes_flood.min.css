@@ -14807,7 +14807,7 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #006573;
+  color: #e89412;
   text-decoration: none;
 }
 a:hover {
@@ -16965,7 +16965,7 @@ textarea.form-control-lg {
 }
 .btn-link {
   font-weight: 400;
-  color: #006573;
+  color: #e89412;
   text-decoration: none;
 }
 .btn-link:hover {
@@ -26646,7 +26646,7 @@ a.badge {
   border-color: var(--tblr-btn-color);
 }
 .btn-link {
-  color: #006573;
+  color: #e89412;
   background-color: transparent;
   border-color: transparent;
 }
@@ -28975,7 +28975,7 @@ Dimmer
   color: #1e293b;
 }
 .page-link:hover .page-item-title {
-  color: #006573;
+  color: #e89412;
 }
 .page-item.disabled .page-item-title {
   color: rgba(98, 105, 118, 0.5);
@@ -31165,7 +31165,7 @@ table.deleted-results > :not(caption) > * > * {
   justify-content: center;
   align-items: center;
   background: rgba(0, 101, 115, 0.05);
-  color: #006573 !important;
+  color: #e89412 !important;
   padding: calc(0.25rem - 1px) 0.25rem;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -32760,7 +32760,7 @@ body .flatpickr-time input:hover, body .flatpickr-time .flatpickr-am-pm:hover, b
   color: #f4f6fa;
 }
 .sidebar, .topbar {
-  background-color: #006573;
+  background-color: #e89412;
   color: #f4f6fa;
   z-index: 1031;
 }
@@ -32886,10 +32886,10 @@ body .flatpickr-time input:hover, body .flatpickr-time .flatpickr-am-pm:hover, b
   }
   body.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu {
     background-color: #f4f6fa;
-    color: #006573;
+    color: #e89412;
     top: 0;
     left: calc(100% + 1px);
-    border: 1px solid #006573;
+    border: 1px solid #e89412;
     position: absolute;
     z-index: 1050;
   }

@@ -32792,7 +32792,7 @@ body .flatpickr-time input:hover, body .flatpickr-time .flatpickr-am-pm:hover, b
   color: #f4f6fa;
 }
 .sidebar, .topbar {
-  background-color: #2f3f64;
+  background-color: #e89412;
   color: #f4f6fa;
   z-index: 1031;
 }
@@ -32918,10 +32918,10 @@ body .flatpickr-time input:hover, body .flatpickr-time .flatpickr-am-pm:hover, b
   }
   body.navbar-collapsed .sidebar #navbar-menu .nav-item .nav-link + .dropdown-menu {
     background-color: #f4f6fa;
-    color: #2f3f64;
+    color: #e89412;
     top: 0;
     left: calc(100% + 1px);
-    border: 1px solid #2f3f64;
+    border: 1px solid #e89412;
     position: absolute;
     z-index: 1050;
   }

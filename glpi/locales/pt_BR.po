@@ -303,11 +303,11 @@ msgstr "Abrir elemento em uma nova aba"
 
 #: js/impact.js:1332
 msgid "Show ongoing tickets"
-msgstr "Exibir chamados em andamento"
+msgstr "Exibir tickets em andamento"
 
 #: js/impact.js:1333
 msgid "Show ongoing tickets for this item"
-msgstr "Exibir chamado em andamento para este artigo"
+msgstr "Exibir ticket em andamento para este artigo"
 
 #: js/impact.js:1339
 msgid "Group properties..."
@@ -1294,11 +1294,11 @@ msgstr ""
 msgid "%s ticket in progress or recently solved on this item."
 msgid_plural "%s tickets in progress or recently solved on this item."
 msgstr[0] ""
-"%s chamado em andamento ou recentemente solucionado para este item."
+"%s ticket em andamento ou recentemente solucionado para este item."
 msgstr[1] ""
-"%s chamados em andamento ou recentemente solucionados para este item."
+"%s tickets em andamento ou recentemente solucionados para este item."
 msgstr[2] ""
-"%s chamados em andamento ou recentemente solucionados para este item."
+"%s tickets em andamento ou recentemente solucionados para este item."
 
 #: ajax/ticketsatisfaction.php:61 src/Entity.php:1384
 msgid "Create survey after"
@@ -1332,7 +1332,7 @@ msgstr "Não especificado"
 
 #: ajax/ticketsatisfaction.php:101
 msgid "For tickets closed after"
-msgstr "Para chamados fechados após"
+msgstr "Para tickets fechados após"
 
 #: ajax/ticketsatisfaction.php:109 src/Link.php:157
 msgid "Valid tags"
@@ -1716,7 +1716,7 @@ msgstr "%s não planeja uma tarefa"
 #: front/itilsolution.form.php:113 front/ticket.form.php:127
 msgid ""
 "You have been redirected because you no longer have access to this ticket"
-msgstr "Você foi redirecionado porque não tem mais acesso a este chamado"
+msgstr "Você foi redirecionado porque não tem mais acesso a este ticket"
 
 #. TRANS: %s is the user login
 #: front/commonitilvalidation.form.php:80
@@ -2001,7 +2001,7 @@ msgstr "Autenticação"
 
 #: front/helpdesk.public.php:99 src/NotificationTargetTicket.php:137
 msgid "New ticket"
-msgstr "Novo chamado"
+msgstr "Novo ticket"
 
 #: front/helpdesk.public.php:103
 #: phpunit/files/_cache/templates/0f/0fe27f62d53417c2b90714f353f0238b.php:94
@@ -3337,11 +3337,11 @@ msgstr "Técnico nas tarefas"
 #: front/ticket_ticket.form.php:59
 #, php-format
 msgid "%s purges link between tickets"
-msgstr "%s apagou uma relação entre chamados"
+msgstr "%s apagou uma relação entre tickets"
 
 #: front/tracking.injector.php:95
 msgid "Your ticket has been registered, its treatment is in progress."
-msgstr "Seu chamado foi registrado, o atendimento está em progresso."
+msgstr "Seu ticket foi registrado, o atendimento está em progresso."
 
 #: front/tracking.injector.php:101
 msgid "Thank you for using our automatic helpdesk system."
@@ -3517,7 +3517,7 @@ msgid ""
 "Current GLPI version not found for database named \"%s\". Update cannot be "
 "done."
 msgstr ""
-"Não foi encontrado um banco de dados chamado \"%s\" para a versão atual do "
+"Não foi encontrado um banco de dados ticket \"%s\" para a versão atual do "
 "GLPI. Não foi possível atualizar."
 
 #: install/install.php:491
@@ -3768,7 +3768,7 @@ msgstr "Assistência"
 
 #: install/migrations/update_9.4.x_to_9.5.0/dashboards.php:345
 msgid "Mini tickets dashboard"
-msgstr "Painel de chamados pequeno"
+msgstr "Painel de tickets pequeno"
 
 #: install/update.php:101 src/Migration.php:858 src/Software.php:1144
 msgid "Task completed."
@@ -3814,7 +3814,7 @@ msgstr "Voltar para o GLPI"
 #: install/update.php:244
 #, php-format
 msgid "Caution! You will update the GLPI database named: %s"
-msgstr "Cuidado! Você irá atualizar o banco de dados de GLPI chamado: %s"
+msgstr "Cuidado! Você irá atualizar o banco de dados de GLPI ticket: %s"
 
 #: install/update.php:260 templates/install/step3.html.twig
 msgid "Database connection successful"
@@ -4258,7 +4258,7 @@ msgstr "Gerência de regras"
 #: phpunit/functional/RuleTest.php:162 src/Profile.php:2836
 #: src/RuleTicket.php:52 src/RuleTicketCollection.php:70
 msgid "Business rules for tickets"
-msgstr "Regras de negócios para chamados"
+msgstr "Regras de negócios para tickets"
 
 #: phpunit/functional/RuleTest.php:311 src/Planning.php:728 src/Rule.php:1493
 msgid "Unavailable"
@@ -5202,7 +5202,7 @@ msgstr "Número de inventário"
 #: src/RuleDictionnarySoftware.php:116 src/Software.php:484
 #: templates/generic_show_form.html.twig
 msgid "Associable to a ticket"
-msgstr "Associável a um chamado"
+msgstr "Associável a um ticket"
 
 #: src/Appliance.php:450 src/Contract.php:424 src/Document.php:1809
 #: src/SoftwareLicense.php:947 src/Ticket.php:2624
@@ -6914,7 +6914,7 @@ msgstr "Lista de verificação"
 #: src/Project.php:795 src/Search.php:8330
 msgctxt "quantity"
 msgid "Number of tickets"
-msgstr "Número de chamados"
+msgstr "Número de tickets"
 
 #: src/Change.php:599 src/ITILCategory.php:267
 #: src/NotificationTargetChange.php:273 src/NotificationTargetProject.php:707
@@ -7104,7 +7104,7 @@ msgstr "Descrição"
 
 #: src/Change.php:1403 src/Ticket.php:5199 src/Ticket.php:5734
 msgid "No ticket in progress."
-msgstr "Nenhum chamado em progresso."
+msgstr "Nenhum ticket em progresso."
 
 #: src/ChangeTask.php:43
 msgid "Change task"
@@ -7137,13 +7137,13 @@ msgstr[2] "Relacionamentos Problema/Mudança"
 #: src/Change_Ticket.php:65
 msgid "Link Ticket/Change"
 msgid_plural "Links Ticket/Change"
-msgstr[0] "Relacionamento chamado/mudança"
-msgstr[1] "Relacionamentos chamado/mudança"
-msgstr[2] "Relacionamentos chamado/mudança"
+msgstr[0] "Relacionamento ticket/mudança"
+msgstr[1] "Relacionamentos ticket/mudança"
+msgstr[2] "Relacionamentos ticket/mudança"
 
 #: src/Change_Ticket.php:297 src/Problem_Ticket.php:326
 msgid "Solve tickets"
-msgstr "Resolver chamados"
+msgstr "Resolver tickets"
 
 #: src/Change_Ticket.php:299 src/CommonITILTask.php:1509 src/Problem.php:418
 #: src/Problem_Ticket.php:328 src/Ticket.php:2638
@@ -7372,7 +7372,7 @@ msgstr "Atualizar as notas dos itens"
 #: src/CommonDBTM.php:5606
 #, php-format
 msgid "Document Ticket %d"
-msgstr "Documento do Chamado %d"
+msgstr "Documento do ticket %d"
 
 #: src/CommonDBTM.php:5712
 msgid "You can define an autofill template"
@@ -7780,9 +7780,9 @@ msgstr "Adicionar um novo custo"
 #: src/CommonITILCost.php:589 src/Profile.php:3250
 msgid "Ticket cost"
 msgid_plural "Ticket costs"
-msgstr[0] "Custo do chamado"
-msgstr[1] "Custos do chamado"
-msgstr[2] "Custos do chamado"
+msgstr[0] "Custo do ticket"
+msgstr[1] "Custos do ticket"
+msgstr[2] "Custos do ticket"
 
 #: src/CommonITILCost.php:592
 msgid "Item duration"
@@ -8319,7 +8319,7 @@ msgstr "A criação de %s falhou (nenhum modelo/template)"
 
 #: src/CommonITILRecurrentCron.php:51
 msgid "Create recurrent tickets and changes"
-msgstr "Criar chamados e mudanças recorrentes"
+msgstr "Criar tickets e mudanças recorrentes"
 
 #: src/CommonITILRecurrentCron.php:99
 #, php-format
@@ -8384,7 +8384,7 @@ msgstr "Número de tarefas"
 
 #: src/CommonITILTask.php:896
 msgid "Private task"
-msgstr "Chamado privado"
+msgstr "ticket privado"
 
 #: src/CommonITILTask.php:1459 src/Features/PlanningEvent.php:704
 #: src/Reminder.php:865
@@ -8394,7 +8394,7 @@ msgstr "Rechamada em %s"
 
 #: src/CommonITILTask.php:1679
 msgid "Ticket tasks to do"
-msgstr "Tarefas de chamado para fazer"
+msgstr "Tarefas de ticket para fazer"
 
 #: src/CommonITILTask.php:1683
 msgid "Problem tasks to do"
@@ -8513,7 +8513,7 @@ msgstr "Documentos"
 
 #: src/CommonITILValidation.php:949
 msgid "Approvals for the ticket"
-msgstr "Aprovação para o(s) chamado(s)"
+msgstr "Aprovação para o(s) ticket(s)"
 
 #: src/CommonITILValidation.php:993 src/KnowbaseItem.php:283
 #: src/KnowbaseItemTranslation.php:92
@@ -9063,25 +9063,25 @@ msgstr ""
 
 #: src/Config.php:906
 msgid "Default heading when adding a document to a ticket"
-msgstr "Cabeçalho padrão quando se está adicionando um documento a um chamado"
+msgstr "Cabeçalho padrão quando se está adicionando um documento a um ticket"
 
 #: src/Config.php:912
 msgid "By default, a software may be linked to a ticket"
-msgstr "Por padrão, pode-se relacionar um software a um chamado"
+msgstr "Por padrão, pode-se relacionar um software a um ticket"
 
 #: src/Config.php:921
 msgid "Keep tickets when purging hardware in the inventory"
-msgstr "Manter os chamados quando eliminar o hardware do inventário"
+msgstr "Manter os tickets quando eliminar o hardware do inventário"
 
 #: src/Config.php:923
 msgid "Show personnal information in new ticket form (simplified interface)"
 msgstr ""
-"Exibir informação pessoal em novo formulário de chamado (interface "
+"Exibir informação pessoal em novo formulário de ticket (interface "
 "simplificada)"
 
 #: src/Config.php:929
 msgid "Allow anonymous ticket creation (helpdesk.receiver)"
-msgstr "Permitir abertura de chamados anônimos (helpdesk.receiver)"
+msgstr "Permitir abertura de tickets anônimos (helpdesk.receiver)"
 
 #: src/Config.php:931
 msgid "Allow anonymous followups (receiver)"
@@ -9268,7 +9268,7 @@ msgstr "Acompanhamentos privados por padrão"
 
 #: src/Config.php:1368
 msgid "Show new tickets on the home page"
-msgstr "Mostrar novos chamados na página inicial"
+msgstr "Mostrar novos tickets na página inicial"
 
 #: src/Config.php:1381
 msgid "Private tasks by default"
@@ -9285,16 +9285,16 @@ msgstr "Estado das tarefas por padrão"
 #: src/Config.php:1394
 msgid "Automatically refresh data (tickets list, project kanban) in minutes."
 msgstr ""
-"Atualizar automaticamente os dados (lista de chamados, projeto kanban) em "
+"Atualizar automaticamente os dados (lista de tickets, projeto kanban) em "
 "minutos."
 
 #: src/Config.php:1404
 msgid "Pre-select me as a technician when creating a ticket"
-msgstr "Me pré-selecione como técnico quando da criação de um chamado"
+msgstr "Me pré-selecione como técnico quando da criação de um ticket"
 
 #: src/Config.php:1411
 msgid "Pre-select me as a requester when creating a ticket"
-msgstr "Me pré-selecione como requerente quando da criação de um chamado"
+msgstr "Me pré-selecione como requerente quando da criação de um ticket"
 
 #: src/Config.php:1418
 msgid "Action button layout"
@@ -9390,7 +9390,7 @@ msgstr "Padrão para Assistência"
 
 #: src/Config.php:1552
 msgid "Default for tickets (mini dashboard)"
-msgstr "Padrão para chamados (mini dashboard)"
+msgstr "Padrão para tickets (mini dashboard)"
 
 #: src/Config.php:1603 src/Config.php:3482
 msgid "Password minimum length"
@@ -10945,7 +10945,7 @@ msgstr "Atualizando perfis..."
 #: src/Console/Migration/AppliancesPluginToCoreCommand.php:303
 #: src/Console/Migration/DatabasesPluginToCoreCommand.php:162
 msgid "Associable items to a ticket"
-msgstr "Itens associáveis a um chamado"
+msgstr "Itens associáveis a um ticket"
 
 #: src/Console/Migration/AppliancesPluginToCoreCommand.php:303
 #, php-format
@@ -11976,7 +11976,7 @@ msgid ""
 "“Telemetry”, that anonymously with your permission, sends data to our "
 "telemetry website."
 msgstr ""
-"Desde o GLPI 9.2, introduzimos um novo recurso de estatística chamado "
+"Desde o GLPI 9.2, introduzimos um novo recurso de estatística ticket "
 "\"Telemetria\", que anonimamente com sua permissão, envia dados para o nosso"
 " site de telemetria."
 
@@ -12957,9 +12957,9 @@ msgstr "coluna: %1$s, linha: %2$s"
 #: src/Dashboard/Filters/TicketTypeFilter.php:45
 msgid "Ticket type"
 msgid_plural "Ticket types"
-msgstr[0] "Tipo de chamado"
-msgstr[1] "Tipos de chamado"
-msgstr[2] "Tipos de chamado"
+msgstr[0] "Tipo de ticket"
+msgstr[1] "Tipos de ticket"
+msgstr[2] "Tipos de ticket"
 
 #: src/Dashboard/Grid.php:287
 msgid "Toggle auto-refresh"
@@ -13057,41 +13057,41 @@ msgstr "%s por %s"
 
 #: src/Dashboard/Grid.php:1207 src/Dashboard/Provider.php:279
 msgid "Late tickets"
-msgstr "Chamados atrasados"
+msgstr "tickets atrasados"
 
 #: src/Dashboard/Grid.php:1208 src/Ticket.php:173 src/Ticket.php:175
 #: src/Ticket.php:5338
 msgid "Tickets waiting for your approval"
-msgstr "Chamados aguardando sua aprovação"
+msgstr "tickets aguardando sua aprovação"
 
 #: src/Dashboard/Grid.php:1209 src/NotificationTargetTicket.php:145
 #: src/NotificationTargetTicket.php:871 src/Ticket.php:5806
 msgid "Not solved tickets"
-msgstr "Chamados não solucionados"
+msgstr "tickets não solucionados"
 
 #: src/Dashboard/Grid.php:1210
 msgid "New tickets"
-msgstr "Novos chamados"
+msgstr "Novos tickets"
 
 #: src/Dashboard/Grid.php:1211 src/Dashboard/Provider.php:378
 msgid "Pending tickets"
-msgstr "Chamados pendentes"
+msgstr "tickets pendentes"
 
 #: src/Dashboard/Grid.php:1212 src/Dashboard/Provider.php:386
 msgid "Assigned tickets"
-msgstr "Chamados atribuídos"
+msgstr "tickets atribuídos"
 
 #: src/Dashboard/Grid.php:1213 src/Dashboard/Provider.php:394
 msgid "Planned tickets"
-msgstr "Chamados planejados"
+msgstr "tickets planejados"
 
 #: src/Dashboard/Grid.php:1214 src/Dashboard/Provider.php:402
 msgid "Solved tickets"
-msgstr "Chamados solucionados"
+msgstr "tickets solucionados"
 
 #: src/Dashboard/Grid.php:1215 src/Dashboard/Provider.php:410
 msgid "Closed tickets"
-msgstr "Chamados fechados"
+msgstr "tickets fechados"
 
 #: src/Dashboard/Grid.php:1238
 #, php-format
@@ -13100,71 +13100,71 @@ msgstr "Lista de %s"
 
 #: src/Dashboard/Grid.php:1255
 msgid "Number of tickets by month"
-msgstr "Número de chamados por mês"
+msgstr "Número de tickets por mês"
 
 #: src/Dashboard/Grid.php:1264
 msgid "Evolution of ticket in the past year"
-msgstr "Evolução dos chamados no último ano"
+msgstr "Evolução dos tickets no último ano"
 
 #: src/Dashboard/Grid.php:1273
 msgid "Tickets status by month"
-msgstr "Status dos chamados por mês"
+msgstr "Status dos tickets por mês"
 
 #: src/Dashboard/Grid.php:1282
 msgid "Tickets times (in hours)"
-msgstr "Tempo dos chamados (em horas)"
+msgstr "Tempo dos tickets (em horas)"
 
 #: src/Dashboard/Grid.php:1291
 msgid "Tickets summary"
-msgstr "Resumos dos chamados"
+msgstr "Resumos dos tickets"
 
 #: src/Dashboard/Grid.php:1301
 msgid "Number of tickets by SLA status and technician"
-msgstr "Número de chamados por status de SLA e técnico"
+msgstr "Número de tickets por status de SLA e técnico"
 
 #: src/Dashboard/Grid.php:1310
 msgid "Number of tickets by SLA status and technician group"
-msgstr "Número de chamados por status de SLA e grupo técnico"
+msgstr "Número de tickets por status de SLA e grupo técnico"
 
 #: src/Dashboard/Grid.php:1317
 msgid "Top ticket's categories"
-msgstr "Top chamados por categorias"
+msgstr "Top tickets por categorias"
 
 #: src/Dashboard/Grid.php:1318
 msgid "Top ticket's entities"
-msgstr "Top chamados por entidades"
+msgstr "Top tickets por entidades"
 
 #: src/Dashboard/Grid.php:1319
 msgid "Top ticket's request types"
-msgstr "Top chamados por origem da requisição"
+msgstr "Top tickets por origem da requisição"
 
 #: src/Dashboard/Grid.php:1320
 msgid "Top ticket's locations"
-msgstr "Top chamados por localização"
+msgstr "Top tickets por localização"
 
 #: src/Dashboard/Grid.php:1335
 msgid "Top ticket's requesters"
-msgstr "Top chamados por requerentes"
+msgstr "Top tickets por requerentes"
 
 #: src/Dashboard/Grid.php:1336
 msgid "Top ticket's requester groups"
-msgstr "Top chamados por grupos requerente"
+msgstr "Top tickets por grupos requerente"
 
 #: src/Dashboard/Grid.php:1337
 msgid "Top ticket's observers"
-msgstr "Top chamados por observadores"
+msgstr "Top tickets por observadores"
 
 #: src/Dashboard/Grid.php:1338
 msgid "Top ticket's observer groups"
-msgstr "Top chamados por grupos observadores"
+msgstr "Top tickets por grupos observadores"
 
 #: src/Dashboard/Grid.php:1339
 msgid "Top ticket's assignees"
-msgstr "Top chamados por atribuição"
+msgstr "Top tickets por atribuição"
 
 #: src/Dashboard/Grid.php:1340
 msgid "Top ticket's assignee groups"
-msgstr "Top chamados por grupos atribuídos"
+msgstr "Top tickets por grupos atribuídos"
 
 #: src/Dashboard/Grid.php:1358
 msgid "List of reminders"
@@ -13187,11 +13187,11 @@ msgstr "Alternar o modo de edição para editar o conteúdo"
 
 #: src/Dashboard/Provider.php:321
 msgid "Tickets waiting for validation"
-msgstr "Chamados aguardando validação"
+msgstr "tickets aguardando validação"
 
 #: src/Dashboard/Provider.php:371
 msgid "Incoming tickets"
-msgstr "Chamados novos"
+msgstr "tickets novos"
 
 #: src/Dashboard/Provider.php:568 src/Dashboard/Provider.php:712
 msgid "Late own and resolve"
@@ -13211,11 +13211,11 @@ msgstr "Pontual"
 
 #: src/Dashboard/Provider.php:608
 msgid "Tickets by SLA status and by technician"
-msgstr "Número de chamados por status de SLA e técnico"
+msgstr "Número de tickets por status de SLA e técnico"
 
 #: src/Dashboard/Provider.php:752
 msgid "Tickets by SLA status and by technician group"
-msgstr "Número de chamados por status de SLA e grupo técnico"
+msgstr "Número de tickets por status de SLA e grupo técnico"
 
 #: src/Dashboard/Provider.php:869
 msgid "without"
@@ -14785,14 +14785,14 @@ msgstr "Alerta de certificado antes de"
 #: src/TicketTemplate.php:50
 msgid "Ticket template"
 msgid_plural "Ticket templates"
-msgstr[0] "Modelo de chamado"
-msgstr[1] "Modelos de chamados"
-msgstr[2] "Modelos de chamados"
+msgstr[0] "Modelo de ticket"
+msgstr[1] "Modelos de tickets"
+msgstr[2] "Modelos de tickets"
 
 #: src/Entity.php:1217 src/Entity.php:3048
 #: src/NotificationTargetTicket.php:717
 msgid "Automatic closing of solved tickets after"
-msgstr "Fechamento automático de chamados solucionados após"
+msgstr "Fechamento automático de tickets solucionados após"
 
 #: src/Entity.php:1228 src/Entity.php:1247 src/Entity.php:3065
 msgid "Immediatly"
@@ -14800,19 +14800,19 @@ msgstr "Imediatamente"
 
 #: src/Entity.php:1236 src/Entity.php:3096
 msgid "Automatic purge of closed tickets after"
-msgstr "Limpeza automática de chamados depois de"
+msgstr "Limpeza automática de tickets depois de"
 
 #: src/Entity.php:1255
 msgid "Alerts on tickets which are not solved"
-msgstr "Alertas sobre chamados não solucionados"
+msgstr "Alertas sobre tickets não solucionados"
 
 #: src/Entity.php:1265
 msgid "Automatic assignment of tickets"
-msgstr "Atribuição automática de chamados"
+msgstr "Atribuição automática de tickets"
 
 #: src/Entity.php:1286 src/Entity.php:2883
 msgid "Tickets default type"
-msgstr "Tipo padrão para chamados"
+msgstr "Tipo padrão para tickets"
 
 #: src/Entity.php:1296 src/Entity.php:2999
 msgid "Default contract"
@@ -14821,7 +14821,7 @@ msgstr "Contrato padrão"
 #: src/Entity.php:1302 src/Entity.php:3005 src/Entity.php:3034
 #: src/Entity.php:3791
 msgid "Contract in ticket entity"
-msgstr "Contrato na entidade do chamado"
+msgstr "Contrato na entidade do ticket"
 
 #: src/Entity.php:1325 src/Entity.php:1805 src/Infocom.php:1299
 #: src/Infocom.php:1534 templates/components/infocom.html.twig
@@ -14989,13 +14989,13 @@ msgstr[2] "Reservas"
 #: src/Ticket.php:110 src/Transfer.php:3974
 msgid "Ticket"
 msgid_plural "Tickets"
-msgstr[0] "Chamado"
-msgstr[1] "Chamados"
-msgstr[2] "Chamados"
+msgstr[0] "ticket"
+msgstr[1] "tickets"
+msgstr[2] "tickets"
 
 #: src/Entity.php:2444
 msgid "Alerts on tickets which are not solved since"
-msgstr "Alertas sobre chamados não solucionados desde"
+msgstr "Alertas sobre tickets não solucionados desde"
 
 #: src/Entity.php:2463
 msgid "Alarms on domains expiries"
@@ -15034,7 +15034,7 @@ msgstr[2] "Modelos de Problema"
 
 #: src/Entity.php:2859
 msgid "Tickets configuration"
-msgstr "Configuração dos chamados"
+msgstr "Configuração dos tickets"
 
 #: src/Entity.php:2864 src/Entity.php:2876 src/Entity.php:3769
 #: src/LevelAgreement.php:445 src/SLM.php:201
@@ -15043,7 +15043,7 @@ msgstr "24/7"
 
 #: src/Entity.php:2904
 msgid "Automatic assignment of tickets, changes and problems"
-msgstr "Atribuição automática de chamados, mudanças e problemas"
+msgstr "Atribuição automática de tickets, mudanças e problemas"
 
 #: src/Entity.php:2924
 msgid "Mark followup added by a supplier though an email collector as private"
@@ -15065,11 +15065,11 @@ msgstr "Configuração de encerramento automático"
 
 #: src/Entity.php:3058
 msgid "Close ticket action is disabled."
-msgstr "A ação de fechar chamado está desabilitada."
+msgstr "A ação de fechar ticket está desabilitada."
 
 #: src/Entity.php:3106
 msgid "Purge ticket action is disabled."
-msgstr "A ação de apagar chamado está desabilitada."
+msgstr "A ação de apagar ticket está desabilitada."
 
 #: src/Entity.php:3146 src/Entity.php:3149
 msgid "Configuring the satisfaction survey"
@@ -15141,7 +15141,7 @@ msgstr "Valor herdado de uma entidade pai"
 
 #: src/Entity.php:3984
 msgid "First found valid contract in ticket entity"
-msgstr "Primeiro contrato válido encontrado na entidade do chamado"
+msgstr "Primeiro contrato válido encontrado na entidade do ticket"
 
 #: src/Event.php:168 src/Profile.php:1899 src/Rule.php:119
 #: src/RuleCollection.php:2181
@@ -15581,7 +15581,7 @@ msgstr "Itens gerenciados"
 
 #: src/Group.php:315
 msgid "Visible in a ticket"
-msgstr "Visível em um chamado"
+msgstr "Visível em um ticket"
 
 #: src/Group.php:341 src/Group.php:568
 msgid "Can be notified"
@@ -15750,7 +15750,7 @@ msgstr "Administração"
 
 #: src/Html.php:1545 src/Profile.php:3180 src/Ticket.php:5309
 msgid "Create a ticket"
-msgstr "Criar um chamado"
+msgstr "Criar um ticket"
 
 #: src/Html.php:2177 src/Lock.php:945
 msgid "Check all"
@@ -16103,7 +16103,7 @@ msgstr "ID de TAG"
 
 #: src/ITILCategory.php:78 src/ITILCategory.php:303 src/RuleTicket.php:634
 msgid "Code representing the ticket category"
-msgstr "Código representando a categoria do chamado"
+msgstr "Código representando a categoria do ticket"
 
 #: src/ITILCategory.php:84 src/ITILCategory.php:245
 msgid "Visible in the simplified interface"
@@ -16150,7 +16150,7 @@ msgstr[2] "Categorias ITIL"
 
 #: src/ITILCategory.php:378 src/ITILCategory.php:400
 msgid "Code representing the ticket category is already used"
-msgstr "O código que representa a categoria do chamado já está sendo usado"
+msgstr "O código que representa a categoria do ticket já está sendo usado"
 
 #: src/ITILCategory.php:484 src/Ticket.php:3777 src/Ticket.php:3795
 msgid "Incident"
@@ -16215,11 +16215,11 @@ msgstr "Atualizar tudo"
 
 #: src/ITILFollowup.php:845
 msgid "Add to all tickets"
-msgstr "Adicionar a todos os chamados"
+msgstr "Adicionar a todos os tickets"
 
 #: src/ITILFollowup.php:846 src/TicketTask.php:268
 msgid "See private ones"
-msgstr "Ver chamados privados"
+msgstr "Ver tickets privados"
 
 #: src/ITILFollowup.php:850
 msgid "Add followup (associated groups)"
@@ -16227,7 +16227,7 @@ msgstr "Adicionar acompanhamento (grupos associados)"
 
 #: src/ITILFollowup.php:851
 msgid "Add a followup to tickets of associated groups"
-msgstr "Adicionar um acompanhamento para chamados dos grupos associados"
+msgstr "Adicionar um acompanhamento para tickets dos grupos associados"
 
 #: src/ITILFollowup.php:853
 msgid "Update followups (author)"
@@ -16239,7 +16239,7 @@ msgstr "Adicionar acompanhamento (requerente)"
 
 #: src/ITILFollowup.php:855
 msgid "Add a followup to tickets (requester)"
-msgstr "Adicionar um acompanhamento a meus chamados (requerente)"
+msgstr "Adicionar um acompanhamento a meus tickets (requerente)"
 
 #: src/ITILFollowup.php:857
 msgid "Add followup (watcher)"
@@ -16247,11 +16247,11 @@ msgstr "Adicionar acompanhamento (observador)"
 
 #: src/ITILFollowup.php:858
 msgid "Add a followup to tickets (watcher)"
-msgstr "\"Adicionar um acompanhamento aos chamados (observador)\""
+msgstr "\"Adicionar um acompanhamento aos tickets (observador)\""
 
 #: src/ITILFollowup.php:860 src/TicketTask.php:271
 msgid "See public ones"
-msgstr "Ver chamados públicos"
+msgstr "Ver tickets públicos"
 
 #: src/ITILFollowup.php:872 src/Ticket.php:2631
 msgid "Add a new followup"
@@ -17379,9 +17379,9 @@ msgstr "Filtro"
 #: src/Item_Ticket.php:55
 msgid "Ticket item"
 msgid_plural "Ticket items"
-msgstr[0] "Item de chamado"
-msgstr[1] "Itens de chamado"
-msgstr[2] "Itens de chamado"
+msgstr[0] "Item de ticket"
+msgstr[1] "Itens de ticket"
+msgstr[2] "Itens de ticket"
 
 #: src/Item_Ticket.php:456
 msgid "Knowledge base entries"
@@ -17436,7 +17436,7 @@ msgstr "Adicionar um problema"
 
 #: src/Itil_Project.php:194 src/Ticket_Contract.php:84
 msgid "Add a ticket"
-msgstr "Adicionar um chamado"
+msgstr "Adicionar um ticket"
 
 #: src/Itil_Project.php:338
 msgid "Add a project"
@@ -17756,7 +17756,7 @@ msgstr "Adicionar um novo item"
 
 #: src/LevelAgreement.php:443 src/SLM.php:202
 msgid "Calendar of the ticket"
-msgstr "Calendário do chamado"
+msgstr "Calendário do ticket"
 
 #: src/LevelAgreement.php:665
 msgctxt "hour"
@@ -17800,11 +17800,11 @@ msgstr[2] "Linhas"
 
 #: src/Line.php:204 templates/pages/management/line.html.twig
 msgid "Caller number"
-msgstr "Número chamado"
+msgstr "Número ticket"
 
 #: src/Line.php:212 templates/pages/management/line.html.twig
 msgid "Caller name"
-msgstr "Nome chamado"
+msgstr "Nome ticket"
 
 #: src/LineOperator.php:49
 msgid "Line operator"
@@ -19637,7 +19637,7 @@ msgstr "Nome No-Reply opcional."
 
 #: src/NotificationMailingSetting.php:212
 msgid "Add documents into ticket notifications"
-msgstr "Adicionar documentos às notificações de chamado"
+msgstr "Adicionar documentos às notificações de ticket"
 
 #: src/NotificationMailingSetting.php:228
 msgid "Way of sending emails"
@@ -19932,15 +19932,15 @@ msgstr "Usuário mencionado"
 
 #: src/NotificationTargetCommonITILObject.php:838
 msgid "Former technician in charge of the ticket"
-msgstr "Técnico anteriormente encarregado do chamado"
+msgstr "Técnico anteriormente encarregado do ticket"
 
 #: src/NotificationTargetCommonITILObject.php:850
 msgid "Manager of the group in charge of the ticket"
-msgstr "Gerente do grupo encarregado do chamado"
+msgstr "Gerente do grupo encarregado do ticket"
 
 #: src/NotificationTargetCommonITILObject.php:854
 msgid "Group in charge of the ticket except manager users"
-msgstr "Grupo encarregado do chamado, exceto usuários gerentes"
+msgstr "Grupo encarregado do ticket, exceto usuários gerentes"
 
 #: src/NotificationTargetCommonITILObject.php:856
 msgid "Requester group manager"
@@ -19952,11 +19952,11 @@ msgstr "Grupo requerente, exceto usuários gerentes"
 
 #: src/NotificationTargetCommonITILObject.php:861
 msgid "Technician in charge of the ticket"
-msgstr "Técnico encarregado do chamado"
+msgstr "Técnico encarregado do ticket"
 
 #: src/NotificationTargetCommonITILObject.php:864
 msgid "Group in charge of the ticket"
-msgstr "Grupo encarregado do chamado"
+msgstr "Grupo encarregado do ticket"
 
 #: src/NotificationTargetCommonITILObject.php:867
 msgid "Watcher group manager"
@@ -20440,7 +20440,7 @@ msgstr "Grupo da equipe de tarefas do projeto"
 #: src/NotificationTargetProjectTask.php:571
 #: templates/pages/tools/project_task.html.twig
 msgid "Tickets duration"
-msgstr "Duração de chamados"
+msgstr "Duração de tickets"
 
 #: src/NotificationTargetReservation.php:43
 msgid "New reservation"
@@ -20497,11 +20497,11 @@ msgstr "Para responder por e-mail, escreva abaixo dessa linha"
 
 #: src/NotificationTargetTicket.php:138
 msgid "Update of a ticket"
-msgstr "Atualização de um chamado"
+msgstr "Atualização de um ticket"
 
 #: src/NotificationTargetTicket.php:139
 msgid "Ticket solved"
-msgstr "Chamado solucionado"
+msgstr "ticket solucionado"
 
 #: src/NotificationTargetTicket.php:140
 msgid "Solution rejected"
@@ -20509,11 +20509,11 @@ msgstr "Solução rejeitada"
 
 #: src/NotificationTargetTicket.php:143
 msgid "Closing of the ticket"
-msgstr "Encerramento do chamado"
+msgstr "Encerramento do ticket"
 
 #: src/NotificationTargetTicket.php:144
 msgid "Deletion of a ticket"
-msgstr "Exclusão de um chamado"
+msgstr "Exclusão de um ticket"
 
 #: src/NotificationTargetTicket.php:146
 msgid "Automatic reminders of SLAs"
@@ -20540,11 +20540,11 @@ msgid "Without a reply, the ticket will be automatically closed after %s day"
 msgid_plural ""
 "Without a reply, the ticket will be automatically closed after %s days"
 msgstr[0] ""
-"Sem uma resposta, o chamado será fechado automaticamente após %s dia"
+"Sem uma resposta, o ticket será fechado automaticamente após %s dia"
 msgstr[1] ""
-"Sem uma resposta, o chamado será fechado automaticamente após %s dias"
+"Sem uma resposta, o ticket será fechado automaticamente após %s dias"
 msgstr[2] ""
-"Sem uma resposta, o chamado será fechado automaticamente após %s dias"
+"Sem uma resposta, o ticket será fechado automaticamente após %s dias"
 
 #: src/NotificationTargetTicket.php:634 src/NotificationTargetTicket.php:639
 #: src/OLA.php:51 src/RuleTicket.php:820 src/RuleTicket.php:831
@@ -20570,7 +20570,7 @@ msgstr "Nome da localidade"
 #: src/NotificationTargetTicket.php:713
 msgctxt "quantity"
 msgid "Number of linked tickets"
-msgstr "Número de chamados relacionados"
+msgstr "Número de tickets relacionados"
 
 #: src/NotificationTargetTicket.php:731
 msgid "Solution rejection comment"
@@ -20616,9 +20616,9 @@ msgstr "Convite para preencher a pesquisa"
 #: src/Ticket_Ticket.php:56
 msgid "Linked ticket"
 msgid_plural "Linked tickets"
-msgstr[0] "Chamado relacionado"
-msgstr[1] "Chamados relacionados"
-msgstr[2] "Chamados relacionados"
+msgstr[0] "ticket relacionado"
+msgstr[1] "tickets relacionados"
+msgstr[2] "tickets relacionados"
 
 #: src/NotificationTargetUser.php:42
 msgid "Password expires"
@@ -20742,7 +20742,7 @@ msgstr "O tempo interno é recalculado ao atribuir o OLA"
 #: src/OLA.php:65
 msgid ""
 "The assignment of an OLA to a ticket causes the recalculation of the date."
-msgstr "A atribuição de um OLA a um chamado causa o recálculo da data."
+msgstr "A atribuição de um OLA a um ticket causa o recálculo da data."
 
 #: src/OLA.php:66
 msgid "Escalations defined in the OLA will be triggered under this new date."
@@ -20840,7 +20840,7 @@ msgstr "Lembretes automáticos da OLA"
 
 #: src/OlaLevel_Ticket.php:46
 msgid "OLA level for Ticket"
-msgstr "Nível OLA para o chamado"
+msgstr "Nível OLA para o ticket"
 
 #: src/OlaLevel_Ticket.php:152
 msgid "Automatic actions of OLA"
@@ -21079,7 +21079,7 @@ msgstr "Após três acompanhamentos"
 msgid ""
 "Send automated follow-ups on pending tickets and solve them if necessary"
 msgstr ""
-"Envie acompanhamentos automatizados de chamados pendentes e resolva se "
+"Envie acompanhamentos automatizados de tickets pendentes e resolva se "
 "necessário"
 
 #: src/PendingReasonCron.php:209
@@ -21285,7 +21285,7 @@ msgstr "Seu planejamento"
 #: src/Planning.php:2730
 #, php-format
 msgid "Ticket #%1$s %2$s"
-msgstr "Chamado #%1$s %2$s"
+msgstr "ticket #%1$s %2$s"
 
 #: src/Planning.php:2770
 msgid "See personnal planning"
@@ -21755,9 +21755,9 @@ msgstr[2] "Tarefas do problema"
 #: src/Problem_Ticket.php:62
 msgid "Link Ticket/Problem"
 msgid_plural "Links Ticket/Problem"
-msgstr[0] "Relacionamento chamado/problema"
-msgstr[1] "Relacionamentos chamado/problema"
-msgstr[2] "Relacionamentos Chamado/Problema"
+msgstr[0] "Relacionamento ticket/problema"
+msgstr[1] "Relacionamentos ticket/problema"
+msgstr[2] "Relacionamentos ticket/Problema"
 
 #: src/Profile.php:157 src/Profile.php:163
 msgid "Life cycles"
@@ -21815,7 +21815,7 @@ msgstr "Atualizar a própria senha"
 
 #: src/Profile.php:812 src/Profile.php:2086
 msgid "Ticket creation form on login"
-msgstr "Formulário de criação de chamado no login"
+msgstr "Formulário de criação de ticket no login"
 
 #: src/Profile.php:909 src/Profile.php:3504 src/Reminder.php:967
 #: src/Reminder.php:969
@@ -21860,7 +21860,7 @@ msgstr "Regras para atribuir um computador a um local"
 #: src/RuleMailCollectorCollection.php:47
 msgid "Rules for assigning a ticket created through a mails receiver"
 msgstr ""
-"Regras para atribuição de um chamado criado através de um coletor de "
+"Regras para atribuição de um ticket criado através de um coletor de "
 "correios"
 
 #: src/Profile.php:1050 src/Profile.php:2893
@@ -21869,7 +21869,7 @@ msgstr "Regras para atribuição de uma categoria a um software"
 
 #: src/Profile.php:1054
 msgid "Business rules for tickets (entity)"
-msgstr "Regras de negócios para chamados (entidade)"
+msgstr "Regras de negócios para tickets (entidade)"
 
 #: src/Profile.php:1057 src/RuleAsset.php:49 src/RuleAssetCollection.php:45
 msgid "Business rules for assets"
@@ -21908,15 +21908,15 @@ msgstr "Ver hardware em meus grupos"
 
 #: src/Profile.php:1209 src/Profile.php:1591 src/Profile.php:3264
 msgid "Link with items for the creation of tickets"
-msgstr "Relacionamento com itens para a criação de chamados"
+msgstr "Relacionamento com itens para a criação de tickets"
 
 #: src/Profile.php:1221 src/Profile.php:1602 src/Profile.php:3273
 msgid "Associable items to tickets, changes and problems"
-msgstr "Itens associáveis a chamados, mudanças e problemas"
+msgstr "Itens associáveis a tickets, mudanças e problemas"
 
 #: src/Profile.php:1229 src/Profile.php:3194
 msgid "Default ticket template"
-msgstr "Modelo padrão de Chamados"
+msgstr "Modelo padrão de tickets"
 
 #: src/Profile.php:1247
 msgid "Default change template"
@@ -21959,7 +21959,7 @@ msgstr "De \\ Para"
 
 #: src/Profile.php:1711 src/Profile.php:1845 src/Profile.php:3303
 msgid "Life cycle of tickets"
-msgstr "Ciclo de vida dos chamados"
+msgstr "Ciclo de vida dos tickets"
 
 #: src/Profile.php:1719 src/Profile.php:3313
 msgid "Life cycle of problems"
@@ -22253,9 +22253,9 @@ msgstr[2] "Tipos de tarefas de projeto"
 #: src/ProjectTask_Ticket.php:68
 msgid "Link Ticket/Project task"
 msgid_plural "Links Ticket/Project task"
-msgstr[0] "Relacionamento tarefa de chamado/projeto"
-msgstr[1] "Relacionamentos tarefa de chamado/projeto"
-msgstr[2] "Relacionamentos tarefa de chamado/projeto"
+msgstr[0] "Relacionamento tarefa de ticket/projeto"
+msgstr[1] "Relacionamentos tarefa de ticket/projeto"
+msgstr[2] "Relacionamentos tarefa de ticket/projeto"
 
 #: src/ProjectTeam.php:73
 msgid "Project team"
@@ -22562,7 +22562,7 @@ msgstr[2] "Origens da requisição"
 
 #: src/RequestType.php:53 src/RequestType.php:88
 msgid "Default for tickets"
-msgstr "Padrão para chamados"
+msgstr "Padrão para tickets"
 
 #: src/RequestType.php:57 src/RequestType.php:97
 msgid "Default for followups"
@@ -22578,7 +22578,7 @@ msgstr "Padrão para destinatários de correio de acompanhamento"
 
 #: src/RequestType.php:69 src/RequestType.php:132
 msgid "Request source visible for tickets"
-msgstr "Origem da requisição visível para os chamados"
+msgstr "Origem da requisição visível para os tickets"
 
 #: src/RequestType.php:73 src/RequestType.php:140
 msgid "Request source visible for followups"
@@ -23568,7 +23568,7 @@ msgstr "Status do item"
 
 #: src/RuleTicket.php:687
 msgid "Ticket location"
-msgstr "Localização de chamado"
+msgstr "Localização de ticket"
 
 #: src/RuleTicket.php:782
 msgid "Reply-To email header"
@@ -23580,7 +23580,7 @@ msgstr "A data de criação é a hora de trabalho no calendário"
 
 #: src/RuleTicket.php:867
 msgid "Ticket category from code"
-msgstr "Categoria do chamado pelo código"
+msgstr "Categoria do ticket pelo código"
 
 #: src/RuleTicket.php:1022
 #: templates/components/itilobject/service_levels.html.twig
@@ -23614,7 +23614,7 @@ msgstr[2] "Modelos de tarefa"
 #: src/SLA.php:64
 msgid ""
 "The assignment of a SLA to a ticket causes the recalculation of the date."
-msgstr "A atribuição de um SLA a um chamado causa o recálculo da data."
+msgstr "A atribuição de um SLA a um ticket causa o recálculo da data."
 
 #: src/SLA.php:65
 msgid "Escalations defined in the SLA will be triggered under this new date."
@@ -23959,7 +23959,7 @@ msgstr "Lembretes automáticos de SLA"
 
 #: src/SlaLevel_Ticket.php:41
 msgid "SLA level for Ticket"
-msgstr "Nível SLA para o chamado"
+msgstr "Nível SLA para o ticket"
 
 #: src/SlaLevel_Ticket.php:147
 msgid "Automatic actions of SLA"
@@ -24118,23 +24118,23 @@ msgstr[2] "Armazenamento de campos de login na requisição HTTP"
 
 #: src/Stat.php:531
 msgid "Real duration of treatment of the ticket"
-msgstr "Duração do chamado (Real)"
+msgstr "Duração do ticket (Real)"
 
 #: src/Stat.php:548
 msgid "Number of opened tickets"
-msgstr "Número de chamados abertos"
+msgstr "Número de tickets abertos"
 
 #: src/Stat.php:549
 msgid "Number of solved tickets"
-msgstr "Número de chamados solucionados"
+msgstr "Número de tickets solucionados"
 
 #: src/Stat.php:550
 msgid "Number of late tickets"
-msgstr "Número de chamados atrasados"
+msgstr "Número de tickets atrasados"
 
 #: src/Stat.php:551
 msgid "Number of closed tickets"
-msgstr "Número de chamados fechados"
+msgstr "Número de tickets fechados"
 
 #: src/Stat.php:567
 msgid "Number of opened satisfaction survey"
@@ -24184,11 +24184,11 @@ msgstr "Tempo médio para fechamento"
 
 #: src/Stat.php:616
 msgid "Average real duration of treatment of the ticket"
-msgstr "Duração real média do tratamento do chamado"
+msgstr "Duração real média do tratamento do ticket"
 
 #: src/Stat.php:621
 msgid "Total real duration of treatment of the ticket"
-msgstr "Duração real total do tratamento do chamado"
+msgstr "Duração real total do tratamento do ticket"
 
 #: src/Stat.php:940
 msgid "No statistics are available"
@@ -24196,16 +24196,16 @@ msgstr "Nenhuma estatística disponível"
 
 #: src/Stat.php:1675
 msgid "Number of tickets"
-msgstr "Número de chamados"
+msgstr "Número de tickets"
 
 #: src/Stat.php:1751 src/Stat/Data/Graph/StatDataSatisfactionSurvey.php:64
 #: src/Stat/Data/Sglobal/StatDataSatisfaction.php:67
 msgid "Tickets"
-msgstr "Chamados"
+msgstr "tickets"
 
 #: src/Stat.php:1757
 msgid "By ticket"
-msgstr "Por chamado"
+msgstr "Por ticket"
 
 #: src/Stat.php:1759
 msgid "By hardware characteristics"
@@ -25067,11 +25067,11 @@ msgstr "o formulário de registro"
 
 #: src/Ticket.php:126
 msgid "Create ticket"
-msgstr "Criar chamado"
+msgstr "Criar ticket"
 
 #: src/Ticket.php:763 src/Ticket.php:813
 msgid "Created tickets"
-msgstr "Chamados criados"
+msgstr "tickets criados"
 
 #: src/Ticket.php:913
 msgid "Satisfaction survey expired"
@@ -25083,11 +25083,11 @@ msgstr "Nenhuma pesquisa gerada"
 
 #: src/Ticket.php:1323 src/Ticket.php:2128
 msgid "Unknown ticket"
-msgstr "Chamado desconhecido"
+msgstr "ticket desconhecido"
 
 #: src/Ticket.php:1832
 msgid "You cannot create a ticket for this user"
-msgstr "Você não pode criar um chamado para este usuário"
+msgstr "Você não pode criar um ticket para este usuário"
 
 #: src/Ticket.php:1986
 #, php-format
@@ -25101,12 +25101,12 @@ msgstr "Tarefa criada automaticamente"
 #: src/Ticket.php:2178
 #, php-format
 msgid "%s promotes a followup from ticket %s"
-msgstr "%s promovido para acompanhamento a partir do chamado %s"
+msgstr "%s promovido para acompanhamento a partir do ticket %s"
 
 #: src/Ticket.php:2194
 #, php-format
 msgid "%s promotes a task from ticket %s"
-msgstr "%s promove uma tarefa do chamado %s"
+msgstr "%s promove uma tarefa do ticket %s"
 
 #: src/Ticket.php:2618
 msgid "Merge as Followup"
@@ -25115,7 +25115,7 @@ msgstr "Unir como Acompanhamento"
 #: src/Ticket.php:2661
 msgctxt "button"
 msgid "Link tickets"
-msgstr "Relacionar chamados"
+msgstr "Relacionar tickets"
 
 #: src/Ticket.php:2665
 msgctxt "button"
@@ -25133,7 +25133,7 @@ msgstr "Vincular a um problema"
 
 #: src/Ticket.php:2685
 msgid "Resolve selected tickets"
-msgstr "Resolver chamados selecionados"
+msgstr "Resolver tickets selecionados"
 
 #: src/Ticket.php:2712
 msgid "Merge followups"
@@ -25172,7 +25172,7 @@ msgstr "Pai de"
 
 #: src/Ticket.php:2747
 msgid "Confirm the merge? This ticket will be deleted!"
-msgstr "Confirma a fusão? Os chamados vão ser apagados!"
+msgstr "Confirma a fusão? Os tickets vão ser apagados!"
 
 #: src/Ticket.php:2758
 msgctxt "button"
@@ -25237,107 +25237,107 @@ msgstr "Tempo de atribuição"
 
 #: src/Ticket.php:3469
 msgid "All linked tickets"
-msgstr "Todos chamados relacionados"
+msgstr "Todos tickets relacionados"
 
 #: src/Ticket.php:3483
 msgid "Duplicated tickets"
-msgstr "Chamados duplicados"
+msgstr "tickets duplicados"
 
 #: src/Ticket.php:3498
 msgid "Number of all linked tickets"
-msgstr "Número de todos chamados relacionados"
+msgstr "Número de todos tickets relacionados"
 
 #: src/Ticket.php:3511
 msgid "Number of duplicated tickets"
-msgstr "Número de chamados duplicados"
+msgstr "Número de tickets duplicados"
 
 #: src/Ticket.php:3526
 msgid "Parent tickets"
-msgstr "Chamados pai"
+msgstr "tickets pai"
 
 #: src/Ticket.php:3549
 msgid "Child tickets"
-msgstr "Chamados filhos"
+msgstr "tickets filhos"
 
 #: src/Ticket.php:3571
 msgid "Number of sons tickets"
-msgstr "Número de chamados filho"
+msgstr "Número de tickets filho"
 
 #: src/Ticket.php:3587
 msgid "Number of parent tickets"
-msgstr "Número de chamados pai"
+msgstr "Número de tickets pai"
 
 #: src/Ticket.php:4774 src/Ticket.php:4995
 msgid "Your tickets to close"
-msgstr "Seus chamados a serem fechados"
+msgstr "Seus tickets a serem fechados"
 
 #: src/Ticket.php:4790 src/Ticket.php:4872
 msgid "Tickets on pending status"
-msgstr "Chamados com status pendente"
+msgstr "tickets com status pendente"
 
 #: src/Ticket.php:4822 src/Ticket.php:4904
 msgid "Tickets to be processed"
-msgstr "Chamados a serem processados"
+msgstr "tickets a serem processados"
 
 #: src/Ticket.php:4838 src/Ticket.php:5011
 msgid "Your observed tickets"
-msgstr "Seus chamados observados"
+msgstr "Seus tickets observados"
 
 #: src/Ticket.php:4855 src/Ticket.php:5073
 msgid "Your tickets in progress"
-msgstr "Seus chamados em progresso"
+msgstr "Seus tickets em progresso"
 
 #: src/Ticket.php:4931
 msgid "Your tickets to validate"
-msgstr "Seus chamados a serem validados"
+msgstr "Seus tickets a serem validados"
 
 #: src/Ticket.php:4949
 msgid "Your tickets having rejected approval status"
-msgstr "Seus chamados com status de aprovação rejeitado"
+msgstr "Seus tickets com status de aprovação rejeitado"
 
 #: src/Ticket.php:4966
 msgid "Your tickets having rejected solution"
-msgstr "Seus chamados com resolução rejeitada"
+msgstr "Seus tickets com resolução rejeitada"
 
 #. TRANS: %d is the number of new tickets
 #: src/Ticket.php:5404
 #, php-format
 msgid "%d new ticket"
 msgid_plural "%d new tickets"
-msgstr[0] "%d novo chamado"
-msgstr[1] "%d novos chamados"
-msgstr[2] "%d novos chamados"
+msgstr[0] "%d novo ticket"
+msgstr[1] "%d novos tickets"
+msgstr[2] "%d novos tickets"
 
 #: src/Ticket.php:5419 src/Ticket.php:5565 src/Ticket.php:5614
 msgid "No ticket found."
-msgstr "Nenhum chamado encontrado.."
+msgstr "Nenhum ticket encontrado.."
 
 #: src/Ticket.php:5475
 msgid "Last tickets"
-msgstr "Últimos chamados"
+msgstr "Últimos tickets"
 
 #: src/Ticket.php:5514 src/Ticket.php:5532
 msgid "New ticket for this item..."
-msgstr "Novo chamado para este item..."
+msgstr "Novo ticket para este item..."
 
 #: src/Ticket.php:5555
 #, php-format
 msgid "Last %d ticket"
 msgid_plural "Last %d tickets"
-msgstr[0] "Último %d chamado"
-msgstr[1] "Últimos %d chamados"
-msgstr[2] "Últimos %d chamados"
+msgstr[0] "Último %d ticket"
+msgstr[1] "Últimos %d tickets"
+msgstr[2] "Últimos %d tickets"
 
 #: src/Ticket.php:5561
 msgid "You don't have right to see all tickets"
-msgstr "Você não tem permissão para ver todos os chamados"
+msgstr "Você não tem permissão para ver todos os tickets"
 
 #: src/Ticket.php:5604
 msgid "Ticket on linked items"
 msgid_plural "Tickets on linked items"
-msgstr[0] "Chamado em itens relacionados"
-msgstr[1] "Chamados em itens relacionados"
-msgstr[2] "Chamados em itens relacionados"
+msgstr[0] "ticket em itens relacionados"
+msgstr[1] "tickets em itens relacionados"
+msgstr[2] "tickets em itens relacionados"
 
 #: src/Ticket.php:5776
 msgid "Assign equipment"
@@ -25345,7 +25345,7 @@ msgstr "Atribuir equipamento"
 
 #: src/Ticket.php:5803
 msgid "Automatic tickets closing"
-msgstr "Encerramento automático de chamados"
+msgstr "Encerramento automático de tickets"
 
 #: src/Ticket.php:5809
 msgid "Generation of satisfaction surveys"
@@ -25353,24 +25353,24 @@ msgstr "Geração das pesquisas de satisfação"
 
 #: src/Ticket.php:5812
 msgid "Automatic closed tickets purge"
-msgstr "Limpeza automática de chamados fechados"
+msgstr "Limpeza automática de tickets fechados"
 
 #: src/Ticket.php:6177
 msgid "See my ticket"
-msgstr "Ver meu chamado"
+msgstr "Ver meu ticket"
 
 #. TRANS: short for : See tickets created by my groups
 #: src/Ticket.php:6179
 msgid "See group ticket"
-msgstr "Ver chamado do grupo"
+msgstr "Ver ticket do grupo"
 
 #: src/Ticket.php:6180
 msgid "See tickets created by my groups"
-msgstr "Veja chamados criados pelos meus grupos"
+msgstr "Veja tickets criados pelos meus grupos"
 
 #: src/Ticket.php:6183
 msgid "See all tickets"
-msgstr "Ver todos chamados"
+msgstr "Ver todos tickets"
 
 #. TRANS: short for : See assigned tickets (group associated)
 #: src/Ticket.php:6185
@@ -25379,11 +25379,11 @@ msgstr "Ver atribuído"
 
 #: src/Ticket.php:6186
 msgid "See assigned tickets"
-msgstr "Ver chamados atribuídos"
+msgstr "Ver tickets atribuídos"
 
 #: src/Ticket.php:6190
 msgid "Assign a ticket"
-msgstr "Atribuir um chamado"
+msgstr "Atribuir um ticket"
 
 #. TRANS: short for : Steal a ticket
 #: src/Ticket.php:6193
@@ -25392,7 +25392,7 @@ msgstr "Apropriar"
 
 #: src/Ticket.php:6194
 msgid "Steal a ticket"
-msgstr "Apropriar-se de um chamado"
+msgstr "Apropriar-se de um ticket"
 
 #. TRANS: short for : To be in charge of a ticket
 #: src/Ticket.php:6197
@@ -25401,7 +25401,7 @@ msgstr "Se tornando encarregado"
 
 #: src/Ticket.php:6198
 msgid "To be in charge of a ticket"
-msgstr "Ficar encarregado de chamados"
+msgstr "Ficar encarregado de tickets"
 
 #: src/Ticket.php:6200
 msgid "Change the priority"
@@ -25409,69 +25409,69 @@ msgstr "Alterar a prioridade"
 
 #: src/Ticket.php:6201
 msgid "Approve solution/Reply survey (my ticket)"
-msgstr "Aprovar solução/Responder a pesquisa (meu chamado)"
+msgstr "Aprovar solução/Responder a pesquisa (meu ticket)"
 
 #: src/Ticket.php:6202
 msgid "Approve solution and reply to survey for ticket created by me"
 msgstr ""
-"Aprovar solução é responder à pesquisa de satisfação do chamado criado por "
+"Aprovar solução é responder à pesquisa de satisfação do ticket criado por "
 "mim"
 
 #: src/Ticket.php:6638 src/Ticket.php:6694 src/Ticket.php:6714
 #: src/Ticket.php:6879
 #, php-format
 msgid "Not enough rights to merge tickets %d and %d"
-msgstr "Sem privilégios para mesclar os chamados %d e %d"
+msgstr "Sem privilégios para mesclar os tickets %d e %d"
 
 #: src/Ticket.php:6657
 #, php-format
 msgid "Failed to load ticket %d"
-msgstr "Falha ao carregar chamado %d"
+msgstr "Falha ao carregar ticket %d"
 
 #: src/Ticket.php:6672 src/Ticket.php:6687
 #, php-format
 msgid "Failed to add followup to ticket %d"
-msgstr "Falha ao adicionar acompanhamento ao chamado %d"
+msgstr "Falha ao adicionar acompanhamento ao ticket %d"
 
 #: src/Ticket.php:6708
 #, php-format
 msgid "Failed to add task to ticket %d"
-msgstr "Falha ao adicionar tarefa ao chamado %d"
+msgstr "Falha ao adicionar tarefa ao ticket %d"
 
 #: src/Ticket.php:6736
 #, php-format
 msgid "Failed to add document to ticket %d"
-msgstr "Falha ao adicionar documento ao chamado %d"
+msgstr "Falha ao adicionar documento ao ticket %d"
 
 #: src/Ticket.php:6766
 #, php-format
 msgid "Failed to link tickets %d and %d"
-msgstr "Falha ao relacionar chamados %d e %d"
+msgstr "Falha ao relacionar tickets %d e %d"
 
 #: src/Ticket.php:6860
 #, php-format
 msgid "Failed to delete ticket %d"
-msgstr "Falha ao apagar o chamado %d"
+msgstr "Falha ao apagar o ticket %d"
 
 #: src/Ticket.php:6872
 #, php-format
 msgid "%s merges ticket %s into %s"
-msgstr "%s mesclado chamado %s em %s"
+msgstr "%s mesclado ticket %s em %s"
 
 #: src/TicketRecurrent.php:55
 msgid "Recurrent tickets"
-msgstr "Chamados recorrentes"
+msgstr "tickets recorrentes"
 
 #: src/TicketSatisfaction.php:129
 msgid "Satisfaction with the resolution of the ticket"
-msgstr "Satisfação com a solução do chamado"
+msgstr "Satisfação com a solução do ticket"
 
 #: src/TicketTask.php:43
 msgid "Ticket task"
 msgid_plural "Ticket tasks"
-msgstr[0] "Tarefa de chamado"
-msgstr[1] "Tarefas de chamado"
-msgstr[2] "Tarefas de chamado"
+msgstr[0] "Tarefa de ticket"
+msgstr[1] "Tarefas de ticket"
+msgstr[2] "Tarefas de ticket"
 
 #: src/TicketTask.php:267
 msgid "Add to all items"
@@ -25503,7 +25503,7 @@ msgstr "Validar um incidente"
 
 #: src/Ticket_Contract.php:48
 msgid "Tickets / Contracts"
-msgstr "Chamados / Contratos"
+msgstr "tickets / Contratos"
 
 #: src/Ticket_Ticket.php:234
 msgid "Duplicated by"
@@ -26051,15 +26051,15 @@ msgstr "Última sincronização"
 
 #: src/User.php:4039 templates/components/itilobject/actors/field.html.twig
 msgid "Number of tickets as requester"
-msgstr "Número de chamados como requerente"
+msgstr "Número de tickets como requerente"
 
 #: src/User.php:4059
 msgid "Number of written tickets"
-msgstr "Número de chamados gravados"
+msgstr "Número de tickets gravados"
 
 #: src/User.php:4074
 msgid "Number of assigned tickets"
-msgstr "Número de chamados atribuídos"
+msgstr "Número de tickets atribuídos"
 
 #: src/User.php:4845 src/User.php:4849 src/User.php:4852
 msgid "Import a user"
@@ -26471,7 +26471,7 @@ msgstr "E-mail direto"
 
 #: templates/components/itilobject/actors/field.html.twig
 msgid "Number of tickets already assigned"
-msgstr "Número de chamados atribuídos"
+msgstr "Número de tickets atribuídos"
 
 #: templates/components/itilobject/actors/main.html.twig
 msgid "Edit notification settings"
@@ -26535,11 +26535,11 @@ msgstr "Enviar mensagem"
 
 #: templates/components/itilobject/selfservice.html.twig
 msgid "There are some tickets awaiting approval"
-msgstr "Há alguns chamados aguardando aprovação"
+msgstr "Há alguns tickets aguardando aprovação"
 
 #: templates/components/itilobject/selfservice.html.twig
 msgid "This ticket concerns me"
-msgstr "Este chamado me diz respeito"
+msgstr "Este ticket me diz respeito"
 
 #: templates/components/itilobject/selfservice.html.twig
 msgid "check it out!"
@@ -26618,13 +26618,13 @@ msgstr "Link para entrada de banco de dados #%id"
 #: templates/components/itilobject/timeline/form_task.html.twig
 #, php-format
 msgid "Merged from Ticket %1$s"
-msgstr "Mesclado a partir do Chamado %1$s"
+msgstr "Mesclado a partir do ticket %1$s"
 
 #: templates/components/itilobject/timeline/form_followup.html.twig
 #: templates/components/itilobject/timeline/form_task.html.twig
 #, php-format
 msgid "Promoted to Ticket %1$s"
-msgstr "Promovido para o Chamado %1$s"
+msgstr "Promovido para o ticket %1$s"
 
 #: templates/components/itilobject/timeline/form_followup.html.twig
 #: templates/components/itilobject/timeline/form_task.html.twig
@@ -26645,7 +26645,7 @@ msgid ""
 "Warning: non closed children tickets depends on current ticket. Are you sure"
 " you want to close it?"
 msgstr ""
-"Aviso: chamados filhos não fechados dependem do chamado atual.\n"
+"Aviso: tickets filhos não fechados dependem do ticket atual.\n"
 "Tem certeza de que deseja fechá-lo?"
 
 #: templates/components/itilobject/timeline/form_task.html.twig
@@ -26695,7 +26695,7 @@ msgstr "%s já foi promovido"
 
 #: templates/components/itilobject/timeline/timeline_item_header.html.twig
 msgid "Promote to Ticket"
-msgstr "Promover para Chamado"
+msgstr "Promover para ticket"
 
 #: templates/components/itilobject/timeline/timeline_item_header_badges.html.twig
 #, php-format
@@ -26819,7 +26819,7 @@ msgstr "Editar grupo"
 
 #: templates/impact/ongoing_modal.html.twig
 msgid "Ongoing tickets"
-msgstr "Chamados em andamento"
+msgstr "tickets em andamento"
 
 #: templates/install/accept_license.html.twig
 msgid "Unofficial translations are also available"

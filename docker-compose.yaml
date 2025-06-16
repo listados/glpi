@@ -28,7 +28,9 @@ services:
       - ./glpi/files:/var/www/html/files
     networks:
       - nginx-proxy
+    ports:
+      - 8080:80
 
 networks:
   nginx-proxy:
-    external: true
+    # external: true

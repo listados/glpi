@@ -51,5 +51,8 @@ chmod -R 775 "$DATA_DIR"
 chown -R www-data:www-data "$MARKETPLACE_DIR"
 chmod -R 775 "$MARKETPLACE_DIR"
 
+chmod -R 777 "$GLPI_PATH/config"
+echo "[init] Permissões 777 aplicadas à pasta de configuração: $GLPI_PATH/config"
+
 # Executa o Apache em foreground
 exec apache2-foreground

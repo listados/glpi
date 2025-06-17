@@ -1,1 +1,5 @@
 .env
+glpi/files/*
+.idea
+glpi/marketplace/additionalalerts
+glpi/plugins/zendeskintegration/vendor

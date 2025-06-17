@@ -1,0 +1,23 @@
+{% extends "generic_show_form.html.twig" %}
+{% import "components/form/fields_macros.html.twig" as fields %}
+
+{% block more_fields %}
+    <div class="container bg-white">
+        <div class="row g-3 align-items-center p-2">
+            <div class="col-3">
+                <label for="inputPassword6" class="col-form-label">Selecione o tipo de consulta</label>
+               <select class="form-control">
+                <option>Selecione</option>
+                <option>Por Usuário</option>
+                <option>Por assunto</option>
+                <option>Por descrição</option>
+               </select>
+            </div>
+            <div class="col-9">
+                <label for="inputPassword6" class="col-form-label">Qual a sua pesquisa</label>
+                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+           
+        </div>
+    </div>
+{% endblock %}

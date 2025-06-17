@@ -179,6 +179,7 @@ class TemplateRenderer
      */
     public function display(string $template, array $variables = []): void
     {
+
         try {
             Profiler::getInstance()->start($template, Profiler::CATEGORY_TWIG);
             $this->environment->load($template)->display($variables);

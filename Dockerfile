@@ -8,7 +8,7 @@ COPY glpi /opt/glpi-src
 COPY logos /opt/glpi-src/pics/logos
 COPY init.sh /init.sh
 
-# Instala dependências do PHP e configurações do Apache
+# Instala dependências e configura
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         cron \
         zlib1g \
@@ -25,8 +25,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && a2enmod rewrite \
     && a2ensite 000-default.conf \
     && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
-    && sed -i 's/session.cookie_httponly =/session.cookie_httponly = On/' /usr/local/etc/php/php.ini \
-    && sed -i 's/;date.timezone =/date.timezone = America\/Fortaleza/' /usr/local/etc/php/php.ini \
+    && sed -i '/^;error_log = php_errors.log$/s/^;//' /usr/local/etc/php/php.ini \
+    && sed -i 's/^display_errors = Off/display_errors = On/' /usr/local/etc/php/php.ini \
+    && sed -i 's/^error_reporting = .*/error_reporting = E_ALL/' /usr/local/etc/php/php.ini \
+    && sed -i 's/^;date.timezone =/date.timezone = America\/Fortaleza/' /usr/local/etc/php/php.ini \
+    && sed -i 's/^session.cookie_httponly =/session.cookie_httponly = On/' /usr/local/etc/php/php.ini \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
+    && echo "Define DUMMY_CONNECTION 0" >> /etc/apache2/apache2.conf \
     && chmod +x /init.sh
 
 WORKDIR /var/www/html

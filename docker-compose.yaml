@@ -17,6 +17,8 @@ services:
     build:
       context: .
     container_name: glpi-web
+    ports:
+      - "8080:80"
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
@@ -31,4 +33,4 @@ services:
 
 networks:
   nginx-proxy:
-    external: true
+    # external: true

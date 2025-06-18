@@ -6,18 +6,64 @@
         <div class="row g-3 align-items-center p-2">
             <div class="col-3">
                 <label for="inputPassword6" class="col-form-label">Selecione o tipo de consulta</label>
-               <select class="form-control">
+               <select class="form-control" id="select-type-zendeskintegration">
                 <option>Selecione</option>
-                <option>Por Usuário</option>
+                <option value="">Por Usuário</option>
                 <option>Por assunto</option>
                 <option>Por descrição</option>
                </select>
             </div>
-            <div class="col-9">
+            <div class="col-7">
                 <label for="inputPassword6" class="col-form-label">Qual a sua pesquisa</label>
-                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                <input type="text" id="keywork-search-zendeskintegration" class="form-control">
             </div>
-           
+            <div class="col-2 d-flex block">
+                <div class="row">
+                    <div class="col-12">
+                    <label for="inputPassword6" class="col-form-label">Consultar</label>
+                    </div>
+                    <a class="btn btn-success" id="btn-search-ticket-zendesk">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+
+
+            </div>
         </div>
+
     </div>
+
+    {# Script inline #}
+    {% block javascripts %}
+
+    <script>
+        $(document).ready(function() {
+            $('#btn-search-ticket-zendesk').click(function() {
+                var data = {
+                    type: $('#select-type-zendeskintegration').val(),
+                    name: $('#keywork-search-zendeskintegration').val(),
+                    action: 'process_ajax'
+                };
+
+                $.ajax({
+                    url: '/plugins/zendeskintegration/ajax/search-ticket.php',
+                    type: 'POST',
+                    data: data,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            alert('Dados salvos com sucesso: ' + response.message);
+                        } else {
+                            alert('Erro: ' + response.message);
+                        }
+                    },
+                    error: function() {
+                        alert('Erro na requisição AJAX.');
+                    }
+                });
+            });
+        });
+
+    </script>
+    {% endblock %}
 {% endblock %}

@@ -26,7 +26,7 @@ class PluginZendeskintegrationSuperasset extends CommonDBTM {
 
         TemplateRenderer::getInstance()->display('@zendeskintegration/superasset.form.html.twig', [
             'item'   => $this,
-            'params' => $options,
+            'params' => $options
         ]);
 
     }

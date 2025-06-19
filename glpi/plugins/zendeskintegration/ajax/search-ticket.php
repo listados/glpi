@@ -26,7 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
 
         // Cria o cliente Guzzle
         $client = new Client([
-            'base_uri' => 'http://localhost:3000/',
+            'base_uri' => 'http://192.168.30.121:3000/',
             'timeout'  => 10.0,
         ]);
 
@@ -35,13 +35,13 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
             'name' => $name,
             'zendesk_id' => $zendesk_id,
             'requester' => [
-                'email' => 'wapn@det.ufc.br'
+                'email' => $name
             ]
         ];
 
         // Faz a requisição POST
-        $guzzleResponse = $client->request('POST', 'tickets', [
-            'query' => ['requester.email' => 'wapn@det.ufc.br'],
+        $guzzleResponse = $client->request('GET', 'tickets', [
+            'query' => ['requester.email' => $name],
             'json' => $postData,
             'headers' => [
                 'Content-Type' => 'application/json',
@@ -62,7 +62,8 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
                 'zendesk_id' => $zendesk_id,
                 'date_creation' => date('Y-m-d H:i:s')
             ];
-//            $new_id = $superasset->add($input);
+//        ?requester.email=wapn@det.ufc.br
+            //germanovb@gmail.com
 
             $response['success'] = true;
             $response['message'] = "Ticket criado com sucesso no endpoint. Super Asset salvo com ID $new_id.";
@@ -85,5 +86,4 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
     header('Content-Type: application/json');
     echo json_encode($response);
     exit;
-    die;
 }

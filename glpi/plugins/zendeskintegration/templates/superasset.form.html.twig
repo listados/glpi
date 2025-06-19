@@ -30,6 +30,15 @@
 
             </div>
         </div>
+        <div class="row g-3 align-items-center p-2">
+            <p id="context-zendeskintegration-return">
+
+            </p>
+            <ul class="list-group" id='ticket-list'>
+                <li class="list-group-item" id="return-description"></li>
+            </ul>
+        </div>
+
 
     </div>
 
@@ -51,11 +60,26 @@
                     data: data,
                     dataType: 'json',
                     success: function(response) {
-                        if (response.success) {
-                            alert('Dados salvos com sucesso: ' + response.message);
-                        } else {
-                            alert('Erro: ' + response.message);
-                        }
+                        console.log(response.data)
+
+                        response.data.forEach((element) => {
+                            console.log(element.description)
+                            $("#return-description").remove();
+                            $("#return-description").append(element.description)
+                            $('#ticket-list').append(
+                                '<li class=\"list-group-item\">' +
+                                '<strong>Assunto: ' + element.subject + '</strong><br>Descrição: ' +
+                                element.description.replace(/\\n/g, '<br>') +
+                                '</li>'
+                            );
+//germanovb@gmail.com
+                        });
+                        $("#return-description").append(response.data)
+                        // if (response.success) {
+                        //     alert('Dados salvos com sucesso: ' + response.message);
+                        // } else {
+                        //     alert('Erro: ' + response.message);
+                        // }
                     },
                     error: function() {
                         alert('Erro na requisição AJAX.');

@@ -24,6 +24,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && docker-php-ext-install mysqli pdo pdo_mysql exif gd intl ldap opcache zip bz2 phar \
     && a2enmod rewrite \
     && a2ensite 000-default.conf \
+    # Instalação do Composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && composer self-update \
+    # Configurações do PHP
     && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     && sed -i '/^;error_log = php_errors.log$/s/^;//' /usr/local/etc/php/php.ini \
     && sed -i 's/^display_errors = Off/display_errors = On/' /usr/local/etc/php/php.ini \

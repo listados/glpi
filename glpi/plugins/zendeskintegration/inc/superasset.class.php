@@ -24,9 +24,15 @@ class PluginZendeskintegrationSuperasset extends CommonDBTM {
     // Exibe o formulário
     public function showForm($ID, $options = []) {
 
+        $arrayTwig = [
+            'template',
+            'illustrates',
+            'basics'
+        ];
         TemplateRenderer::getInstance()->display('@zendeskintegration/superasset.form.html.twig', [
             'item'   => $this,
-            'params' => $options
+            'params' => $options,
+            'arrayTwig' => $arrayTwig
         ]);
 
     }

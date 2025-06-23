@@ -553,7 +553,14 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget
 
             $iterator = $DB->request($criteria);
             foreach ($iterator as $data) {
-                 $this->addToRecipientsList($data);
+                // Evita que o autor receba notificação do próprio followup
+                if (isset($this->event) && $this->event === 'followup'
+                    && isset($this->item->fields['users_id'])
+                    && $data['id'] == $this->item->fields['users_id']) {
+                    continue;
+                }
+
+                $this->addToRecipientsList($data);
             }
         }
     }

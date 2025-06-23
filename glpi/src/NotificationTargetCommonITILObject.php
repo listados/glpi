@@ -965,9 +965,9 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget
                         break;
 
                //Send to the ITIL object followup author
-                    // case Notification::FOLLOWUP_AUTHOR:
-                    //     $this->addFollowupAuthor($options);
-                    //     break;
+                    case Notification::FOLLOWUP_AUTHOR:
+                        $this->addFollowupAuthor($options);
+                        break;
 
                //Send to the ITIL object followup author
                     case Notification::TASK_AUTHOR:

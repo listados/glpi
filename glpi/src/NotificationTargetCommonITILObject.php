@@ -553,14 +553,7 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget
 
             $iterator = $DB->request($criteria);
             foreach ($iterator as $data) {
-                // Evita que o autor receba notificação do próprio followup
-                if (isset($this->event) && $this->event === 'followup'
-                    && isset($this->item->fields['users_id'])
-                    && $data['id'] == $this->item->fields['users_id']) {
-                    continue;
-                }
-
-                $this->addToRecipientsList($data);
+                 $this->addToRecipientsList($data);
             }
         }
     }
@@ -972,9 +965,9 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget
                         break;
 
                //Send to the ITIL object followup author
-                    case Notification::FOLLOWUP_AUTHOR:
-                        $this->addFollowupAuthor($options);
-                        break;
+                    // case Notification::FOLLOWUP_AUTHOR:
+                    //     $this->addFollowupAuthor($options);
+                    //     break;
 
                //Send to the ITIL object followup author
                     case Notification::TASK_AUTHOR:

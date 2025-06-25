@@ -4,8 +4,18 @@ use Glpi\Application\View\TemplateRenderer;
 
 
 class PluginZendeskintegrationSuperasset extends CommonDBTM {
+
+    // Define direitos
+    public function getRights($interface = 'central') {
+        return [
+            READ => __('Read Super Assets', 'zendeskintegration'),
+            CREATE => __('Create Super Assets', 'zendeskintegration'),
+            UPDATE => __('Update Super Assets', 'zendeskintegration'),
+            DELETE => __('Delete Super Assets', 'zendeskintegration')
+        ];
+    }
     static function getTypeName($nb = 0) {
-        return 'Integração com Zendesk';
+        return __('Integração Zendesk', 'zendeskintegration');
     }
 
     static function getMenuName($nb = 0)
@@ -49,31 +59,10 @@ class PluginZendeskintegrationSuperasset extends CommonDBTM {
      */
     static function getMenuContent()
     {
-        $title  = self::getMenuName(Session::getPluralNumber());
-        $search = self::getSearchURL(false);
-        $form   = self::getFormURL(false);
-
-        // define base menu
-        $menu = [
-            'title' => __("My plugin", 'zendeskintegration'),
-            'page'  => $search,
-
-            // define sub-options
-            // we may have multiple pages under the "Plugin > My type" menu
-            'options' => [
-                'superasset' => [
-                    'title' => $title,
-                    'page'  => $search,
-
-                    //define standard icons in sub-menu
-                    'links' => [
-                        'search' => $search,
-                        'add'    => $form
-                    ]
-                ]
-            ]
+        return [
+            'title' => __('Zendesk Ticket', 'zendeskintegration'),
+            'page' => '/plugins/zendeskintegration/front/superasset.form.php',
+            'icon' => 'fas fa-cubes'
         ];
-
-        return $menu;
     }
 }

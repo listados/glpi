@@ -21,7 +21,9 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
         $zendesk_id = $_POST['zendesk_id'] ?? '';
 
         if (empty($name)) {
-            throw new Exception('O campo Nome é obrigatório.');
+            echo json_encode(['message' => 'O campo nome é obrigatório']);
+            return false;
+//            throw new Exception('O campo Nome é obrigatório.');
         }
 
         // Cria o cliente Guzzle
@@ -29,7 +31,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
             'base_uri' => 'http://192.168.30.121:3000/',
             'timeout'  => 10.0,
         ]);
-
+        var_dump($client); die;
         // Dados para a requisição POST
         $postData = [
             'name' => $name,
@@ -45,7 +47,8 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
             'json' => $postData,
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Accept' => 'application/json'
+                'Accept' => 'application/json',
+                'X-API-Key' => 'e473f24d4325d51a933cc18105bcf311cc10d10c3db12204467b1bfe9df27f7e'
             ]
         ]);
 

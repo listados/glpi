@@ -47,6 +47,7 @@
 
     <script>
         $(document).ready(function() {
+            displayAjaxMessageAfterRedirect('message', false)
             $('#btn-search-ticket-zendesk').click(function() {
                 var data = {
                     type: $('#select-type-zendeskintegration').val(),
@@ -62,18 +63,18 @@
                     success: function(response) {
                         console.log(response.data)
 
-                        response.data.forEach((element) => {
-                            console.log(element.description)
-                            $("#return-description").remove();
-                            $("#return-description").append(element.description)
-                            $('#ticket-list').append(
-                                '<li class=\"list-group-item\">' +
-                                '<strong>Assunto: ' + element.subject + '</strong><br>Descrição: ' +
-                                element.description.replace(/\\n/g, '<br>') +
-                                '</li>'
-                            );
-//germanovb@gmail.com
-                        });
+//                         response.data.forEach((element) => {
+//                             console.log(element.description)
+//                             $("#return-description").remove();
+//                             $("#return-description").append(element.description)
+//                             $('#ticket-list').append(
+//                                 '<li class=\"list-group-item\">' +
+//                                 '<strong>Assunto: ' + element.subject + '</strong><br>Descrição: ' +
+//                                 element.description.replace(/\\n/g, '<br>') +
+//                                 '</li>'
+//                             );
+// //germanovb@gmail.com
+//                         });
                         $("#return-description").append(response.data)
                         // if (response.success) {
                         //     alert('Dados salvos com sucesso: ' + response.message);
@@ -87,7 +88,29 @@
                 });
             });
         });
+        // Função para exibir mensagens no estilo GLPI
+        function displayAjaxMessageAfterRedirect(message, isSuccess) {
+            console.log('displayAjaxMessageAfterRedirect')
+            var alertClass = isSuccess ? 'alert-success' : 'alert-danger';
+            var alertIcon = isSuccess ? 'fa-check' : 'fa-exclamation-triangle';
+            var alertMessage = '<div class=\"alert ' + alertClass + ' alert-dismissible fade show\" role=\"alert\">' +
+                '<i class=\"fa ' + alertIcon + ' me-2\"></i>' +
+                message +
+                '<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>' +
+                '</div>';
 
+            // Adicionar a mensagem ao topo da página
+            if ($('#message_after_redirect').length) {
+                $('#message_after_redirect').html(alertMessage);
+            } else {
+                $('body').prepend('<div id=\"message_after_redirect\" class=\"mt-3\">' + alertMessage + '</div>');
+            }
+
+            // Auto-remover após 5 segundos
+            setTimeout(function() {
+                $('.alert').alert('close');
+            }, 5000);
+        }
     </script>
     {% endblock %}
 {% endblock %}

@@ -10,16 +10,20 @@ define('PLUGIN_ZENDESKINTEGRATION_VERSION', '1.0.0');
 function plugin_init_zendeskintegration() {
    global $PLUGIN_HOOKS;
    $PLUGIN_HOOKS['csrf_compliant']['zendeskintegration'] = true;
-   $PLUGIN_HOOKS['menu_toadd']['myplugin'] = [
+   $PLUGIN_HOOKS['menu_toadd']['zendeskintegration'] = [
         // insert into 'plugin menu'
         'plugins' => PluginZendeskintegrationSuperasset::class
     ];
 
    // Adicionar ao menu
-   Plugin::registerClass('PluginZendeskintegrationSuperasset', ['addtabon' => ['Computer']]);
-   $PLUGIN_HOOKS['menu_toadd']['zendeskintegration'] = [
-      'assets' => 'PluginZendeskintegrationSuperasset'
-   ];
+   Plugin::registerClass('PluginZendeskintegrationSuperasset', [
+       'addtabon' => [
+           'Computer', 'Ticket'
+       ] // Exemplo: adiciona abas em outros itens
+   ]);
+
+    // Adicionar permissões
+    $PLUGIN_HOOKS['config_page']['zendeskintegration'] = 'front/config.form.php'; // Opcional: página de configuração
 }
 
 /**
@@ -29,7 +33,7 @@ function plugin_init_zendeskintegration() {
  */
 function plugin_version_zendeskintegration() {
    return [
-      'name'           => 'Zendesk Integration',
+       'name'          => __('Zendesk Integration', 'zendeskintegration'),
       'version'        => PLUGIN_ZENDESKINTEGRATION_VERSION,
       'author'         => 'Junior Oliveira>',
       'license'        => 'GLPv3',
@@ -50,10 +54,10 @@ function plugin_version_zendeskintegration() {
  */
 function plugin_check_prerequisites() {
    //do what the checks you want
-   if (version_compare(GLPI_VERSION, '10.0', '<')) {
-      echo "Este plugin requer GLPI >= 10.0";
-      return false;
-   }
+    if (version_compare(GLPI_VERSION, '10.0', 'lt') || version_compare(GLPI_VERSION, '11.0', 'ge')) {
+        echo "This plugin requires GLPI >= 10.0 and < 11.0";
+        return false;
+    }
    return true;
 }
 

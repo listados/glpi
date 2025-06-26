@@ -3,14 +3,15 @@
 
 {% block more_fields %}
     <div class="container bg-white">
+        <h2>{{ 'Tickets Zendesk' }}</h2>
         <div class="row g-3 align-items-center p-2">
             <div class="col-3">
                 <label for="inputPassword6" class="col-form-label">Selecione o tipo de consulta</label>
                <select class="form-control" id="select-type-zendeskintegration">
                 <option>Selecione</option>
-                <option value="">Por Usuário</option>
-                <option>Por assunto</option>
-                <option>Por descrição</option>
+                <option value="name_user">Por Usuário</option>
+                <option value="name_subject">Por assunto</option>
+                <option value="name_description">Por descrição</option>
                </select>
             </div>
             <div class="col-7">
@@ -42,75 +43,104 @@
 
     </div>
 
+
     {# Script inline #}
     {% block javascripts %}
-
     <script>
         $(document).ready(function() {
-            displayAjaxMessageAfterRedirect('message', false)
+            if( $('#select-type-zendeskintegration').val() == '' || $('#keywork-search-zendeskintegration').val()){
+                alert("Todos os campos são obrigatórios");
+            }
+
+
+
             $('#btn-search-ticket-zendesk').click(function() {
+                // Validação dos campos
+                var type = $('#select-type-zendeskintegration').val();
+                console.log({type})
+                var name = $('#keywork-search-zendeskintegration').val().trim();
+                var errors = [];
+
+                if (type == 'Selecione') {
+                    errors.push('{{ 'O campo Tipo é obrigatório.'  }}');
+                    $('#select-type-zendeskintegration').addClass('is-invalid');
+                } else {
+                    $('#select-type-zendeskintegration').removeClass('is-invalid');
+                }
+
+                if (!name) {
+                    errors.push('{{ 'O campo Palavra-chave é obrigatório.'  }}');
+                    $('#keywork-search-zendeskintegration').addClass('is-invalid');
+                } else {
+                    $('#keywork-search-zendeskintegration').removeClass('is-invalid');
+                }
+
+                if (errors.length > 0) {
+                    // Exibir alerta nativo do GLPI
+                    glpi_toast_error(errors.join('<br>'));
+                    return;
+                }
+
+                // Enviar requisição AJAX
                 var data = {
-                    type: $('#select-type-zendeskintegration').val(),
-                    name: $('#keywork-search-zendeskintegration').val(),
+                    type: type,
+                    name: name,
                     action: 'process_ajax'
                 };
-
                 $.ajax({
-                    url: '/plugins/zendeskintegration/ajax/search-ticket.php',
+                    url: 'plugins/zendeskintegration/ajax/search-ticket.php',
                     type: 'POST',
                     data: data,
                     dataType: 'json',
                     success: function(response) {
-                        console.log(response.data)
-
-//                         response.data.forEach((element) => {
-//                             console.log(element.description)
-//                             $("#return-description").remove();
-//                             $("#return-description").append(element.description)
-//                             $('#ticket-list').append(
-//                                 '<li class=\"list-group-item\">' +
-//                                 '<strong>Assunto: ' + element.subject + '</strong><br>Descrição: ' +
-//                                 element.description.replace(/\\n/g, '<br>') +
-//                                 '</li>'
-//                             );
-// //germanovb@gmail.com
-//                         });
-                        $("#return-description").append(response.data)
-                        // if (response.success) {
-                        //     alert('Dados salvos com sucesso: ' + response.message);
-                        // } else {
-                        //     alert('Erro: ' + response.message);
-                        // }
+                        console.log('Resposta:', response);
+                        $('#return-description').empty();
+                        {#if (response.success && response.data && Array.isArray(response.data)) {#}
+                        {#    response.data.forEach(function(ticket) {#}
+                        {#        $('#return-description').append(#}
+                        {#            '<li class="list-group-item">' +#}
+                        {#            '<strong>' + (ticket.subject || '{{ 'Sem assunto'  }}') + '</strong><br>' +#}
+                        {#            (ticket.description || '{{ 'Sem descrição'  }}').replace(/\\n/g, '<br>') +#}
+                        {#            '</li>'#}
+                        {#        );#}
+                        {#    });#}
+                        {#    displayAjaxMessageAfterRedirect('{{ 'Tickets carregados com sucesso!'  }}', true);#}
+                        {#} else {#}
+                        {#    $('#return-description').html('<li class="list-group-item">{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}') + '</li>');#}
+                        {#    displayAjaxMessageAfterRedirect('{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}'), false);#}
+                        {#}#}
                     },
-                    error: function() {
-                        alert('Erro na requisição AJAX.');
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log('Erro AJAX:', textStatus, errorThrown);
+                        $('#return-description').html('<li class="list-group-item">{{ 'Erro na requisição AJAX: '  }}' + textStatus + '</li>');
+                        glpi_toast_error('{{ 'Erro na requisição AJAX: '  }}' + textStatus, false);
                     }
                 });
             });
+
+            // Função para exibir mensagens no estilo GLPI
+            function displayAjaxMessageAfterRedirect(message, isSuccess) {
+                var alertClass = isSuccess ? 'alert-success' : 'alert-danger';
+                var alertIcon = isSuccess ? 'fa-check' : 'fa-exclamation-triangle';
+                var alertMessage = '<div class="alert ' + alertClass + ' alert-dismissible fade show" role="alert">' +
+                    '<i class="fa ' + alertIcon + ' me-2"></i>' +
+                    message +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>';
+
+                if ($('#message_after_redirect').length) {
+                    $('#message_after_redirect').html(alertMessage);
+                } else {
+                    $('body').prepend('<div id="message_after_redirect" class="mt-3">' + alertMessage + '</div>');
+                }
+
+                setTimeout(function() {
+                    $('.alert').alert('close');
+                }, 5000);
+            }
         });
         // Função para exibir mensagens no estilo GLPI
-        function displayAjaxMessageAfterRedirect(message, isSuccess) {
-            console.log('displayAjaxMessageAfterRedirect')
-            var alertClass = isSuccess ? 'alert-success' : 'alert-danger';
-            var alertIcon = isSuccess ? 'fa-check' : 'fa-exclamation-triangle';
-            var alertMessage = '<div class=\"alert ' + alertClass + ' alert-dismissible fade show\" role=\"alert\">' +
-                '<i class=\"fa ' + alertIcon + ' me-2\"></i>' +
-                message +
-                '<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>' +
-                '</div>';
 
-            // Adicionar a mensagem ao topo da página
-            if ($('#message_after_redirect').length) {
-                $('#message_after_redirect').html(alertMessage);
-            } else {
-                $('body').prepend('<div id=\"message_after_redirect\" class=\"mt-3\">' + alertMessage + '</div>');
-            }
-
-            // Auto-remover após 5 segundos
-            setTimeout(function() {
-                $('.alert').alert('close');
-            }, 5000);
-        }
     </script>
     {% endblock %}
 {% endblock %}

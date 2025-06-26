@@ -18,10 +18,14 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
     try {
         // Valida os dados recebidos
         $name = $_POST['name'] ?? '';
+        $type = $_POST['type'] ?? '';
         $zendesk_id = $_POST['zendesk_id'] ?? '';
 
-        if (empty($name)) {
-            echo json_encode(['message' => 'O campo nome é obrigatório']);
+        if (empty($name) || empty($type)) {
+            echo json_encode([
+                'message' => 'Todos os campos são obrigatório',
+                'status'  => 422,
+            ]);
             return false;
 //            throw new Exception('O campo Nome é obrigatório.');
         }

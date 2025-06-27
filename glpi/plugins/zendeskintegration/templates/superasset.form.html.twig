@@ -9,7 +9,8 @@
                 <label for="inputPassword6" class="col-form-label">Selecione o tipo de consulta</label>
                <select class="form-control" id="select-type-zendeskintegration">
                 <option>Selecione</option>
-                <option value="name_user">Por Usuário</option>
+                <option value="name">Por Usuário</option>
+                <option value="email">Por E-mail</option>
                 <option value="name_subject">Por assunto</option>
                 <option value="name_description">Por descrição</option>
                </select>
@@ -52,6 +53,28 @@
                 alert("Todos os campos são obrigatórios");
             }
 
+            function showToast(title, message, type, position = 'top-0 end-0') {
+                const toastId = Date.now(); // ID único baseado no timestamp
+                const cssClass = type === 'error' ? 'bg-danger text-white border-0' : 'bg-info text-white border-0';
+                const animationClasses = 'animate__animated animate__tada animate__delay-2s animate__slow';
+                const html = `<div class='toast-container ${position} p-3'>
+                    <div id='toast_js_${toastId}' class='toast ${animationClasses}' role='alert' aria-live='assertive' aria-atomic='true'>
+                        <div class='toast-header ${cssClass}'>
+                            <strong class='me-auto'>${title}</strong>
+                            <button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='${'{{ 'Close' }}'}'></button>
+                        </div>
+                        <div class='toast-body'>
+                            ${message}
+                        </div>
+                    </div>
+                </div>`;
+                $('body').append(html);
+
+                const toast = new bootstrap.Toast(document.querySelector('#toast_js_' + toastId), {
+                    delay: 5000
+                });
+                toast.show();
+            }
 
 
             $('#btn-search-ticket-zendesk').click(function() {
@@ -76,8 +99,10 @@
                 }
 
                 if (errors.length > 0) {
+                    console.log(errors)
                     // Exibir alerta nativo do GLPI
-                    glpi_toast_error(errors.join('<br>'));
+                    showToast('{{ 'Erro de Validação' }}', errors.join('<br>'), 'error', 'top-0 end-0');
+                    {#glpi_toast_error(errors.join('<br>'), '{{ 'Erro de Validação' }}', { position: 'top-0 end-0' });#}
                     return;
                 }
 
@@ -88,27 +113,30 @@
                     action: 'process_ajax'
                 };
                 $.ajax({
-                    url: 'plugins/zendeskintegration/ajax/search-ticket.php',
+                    url: '../ajax/search-ticket.php',
                     type: 'POST',
                     data: data,
                     dataType: 'json',
                     success: function(response) {
                         console.log('Resposta:', response);
                         $('#return-description').empty();
-                        {#if (response.success && response.data && Array.isArray(response.data)) {#}
-                        {#    response.data.forEach(function(ticket) {#}
-                        {#        $('#return-description').append(#}
-                        {#            '<li class="list-group-item">' +#}
-                        {#            '<strong>' + (ticket.subject || '{{ 'Sem assunto'  }}') + '</strong><br>' +#}
-                        {#            (ticket.description || '{{ 'Sem descrição'  }}').replace(/\\n/g, '<br>') +#}
-                        {#            '</li>'#}
-                        {#        );#}
-                        {#    });#}
-                        {#    displayAjaxMessageAfterRedirect('{{ 'Tickets carregados com sucesso!'  }}', true);#}
-                        {#} else {#}
-                        {#    $('#return-description').html('<li class="list-group-item">{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}') + '</li>');#}
-                        {#    displayAjaxMessageAfterRedirect('{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}'), false);#}
-                        {#}#}
+                        if (response.success && response.data && Array.isArray(response.data)) {
+                            response.data.forEach(function(ticket) {
+                                $('#return-description').append(
+                                    '<li class="list-group-item"> <strong>Assunto: </strong>' +
+                                    '<a href="#" target="_blank">' + // Âncora com link para o ticket
+                                    (ticket.subject || 'Sem assunto') +
+                                    '</a>' +
+                                    '<br><strong> Descrição: </strong>'  +
+                                    (ticket.description || '{{ 'Sem descrição'  }}').replace(/\\n/g, '<br>') +
+                                    '</li>'
+                                );
+                            });
+                            {#displayAjaxMessageAfterRedirect('{{ 'Tickets carregados com sucesso!'  }}', true);#}
+                        } else {
+                            $('#return-description').html('<li class="list-group-item">{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}') + '</li>');
+                            {#displayAjaxMessageAfterRedirect('{{ 'Erro: '  }}' + (response.message || '{{ 'Nenhum ticket retornado'  }}'), false);#}
+                        }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log('Erro AJAX:', textStatus, errorThrown);

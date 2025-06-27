@@ -35,19 +35,25 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
             'base_uri' => 'http://192.168.30.121:3000/',
             'timeout'  => 10.0,
         ]);
-        var_dump($client); die;
+
+        // Construir o parâmetro query dinamicamente
+        $query = [];
+        if ($type === 'name') {
+            $query = ['requester.name' => $name];
+        } elseif ($type === 'email') {
+            $query = ['requester.email' => $name];
+        }
+
         // Dados para a requisição POST
         $postData = [
+            'type' => $type,
             'name' => $name,
-            'zendesk_id' => $zendesk_id,
-            'requester' => [
-                'email' => $name
-            ]
+            'requester' => [$type => $name] // Ajustar requester no body, se necessário
         ];
 
         // Faz a requisição POST
         $guzzleResponse = $client->request('GET', 'tickets', [
-            'query' => ['requester.email' => $name],
+            'query' => $query,
             'json' => $postData,
             'headers' => [
                 'Content-Type' => 'application/json',
@@ -55,7 +61,6 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
                 'X-API-Key' => 'e473f24d4325d51a933cc18105bcf311cc10d10c3db12204467b1bfe9df27f7e'
             ]
         ]);
-
         // Obtém a resposta
         $statusCode = $guzzleResponse->getStatusCode();
         $responseBody = json_decode($guzzleResponse->getBody()->getContents(), true);
@@ -73,7 +78,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
             //germanovb@gmail.com
 
             $response['success'] = true;
-            $response['message'] = "Ticket criado com sucesso no endpoint. Super Asset salvo com ID $new_id.";
+            $response['status'] = "200";
             $response['data'] = $responseBody; // Inclui a resposta do endpoint
         } else {
             throw new Exception('Falha ao criar ticket. Status: ' . $statusCode);

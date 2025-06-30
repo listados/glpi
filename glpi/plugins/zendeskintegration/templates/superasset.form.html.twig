@@ -48,6 +48,92 @@
     {# Script inline #}
     {% block javascripts %}
     <script>
+        // Função para formatar data
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+        function viewTicket(id)
+        {
+            console.log({id})
+            $('#return-description').empty();
+            $.ajax({
+                url: '../ajax/search-ticket.php',
+                type: 'POST',
+                data: {id:id, action : 'ticket_id'},
+                dataType: 'json',
+                success: function(response) {
+                    console.log('Resposta:', response);
+                    console.log('success:', response.success);
+                    console.log('data:', response.data);
+                    console.log('isArray:', typeof response.data);
+
+                    if (response.success && response.data) {
+                        // Converter response.data em array, se for um objeto
+                        const tickets = Array.isArray(response.data) ? response.data : [response.data];
+                        console.log('Tickets convertidos:', tickets);
+                        tickets.forEach(function(ticket) {
+                            // Construir HTML para comentários e anexos
+                            let commentsHtml = '';
+                            if (ticket.comments && Array.isArray(ticket.comments)) {
+                                ticket.comments.forEach(function(comment) {
+                                    const commentDate = formatDate(comment.created_at);
+                                    commentsHtml += `
+                                            <div class="comment mt-2">
+                                                <strong>{{ 'Comentário por'   }} ${comment.author?.name || '{{ 'Desconhecido'   }}'} (${commentDate}):</strong><br>
+                                                ${(comment.body || '{{ 'Sem conteúdo'   }}').replace(/\\n/g, '<br>')}
+                                                <div class="attachments mt-1">
+                                                    ${comment.attachments && Array.isArray(comment.attachments) ? comment.attachments.map(attachment => `
+                                                        <a href="${attachment.content_url || '#'}" target="_blank" class="attachment-link" tabindex="0">
+                                                            ${attachment.file_name || '{{ 'Anexo sem nome'   }}'}
+                                                        </a><br>
+                                                    `).join('') : ''}
+                                                </div>
+                                            </div>
+                                        `;
+                                });
+                            }
+
+                            $('#return-description').append(`
+                                    <li class="list-group-item">
+                                        <strong>{{ 'Assunto:'   }} </strong>
+                                        <label>${ticket.subject || '{{ 'Sem assunto'   }}'}</label>
+                                        <button type="button" class="btn btn-primary btn-sm ms-2" onclick="viewTicket('${ticket.id || ''}')" aria-label="{{ 'Ver detalhes do ticket'   }} ${ticket.subject || '{{ 'Sem assunto'   }}'}">{{ 'Ver Ticket'   }}</button>
+                                        <br><strong>{{ 'Atribuído a:'   }} </strong>${ticket.assignee?.name || '{{ 'Não atribuído'   }}'}
+                                        <br><strong>{{ 'Status:'   }} </strong>${ticket.status || '{{ 'Sem status'   }}'}
+                                        <br><strong>{{ 'Para:'   }} </strong>${ticket.requester?.name || '{{ 'Sem destinatário'   }}'}
+                                        <br><strong>{{ 'Comentários:'   }} </strong>${commentsHtml || '{{ 'Sem comentários'   }}'}
+                                    </li>
+                                `);
+                        });
+                        if (typeof glpi_toast_info === 'function') {
+                            glpi_toast_info(response.message || '{{ 'Tickets carregados com sucesso!'   }}', '{{ 'Sucesso'   }}', { position: 'top-0 end-0' });
+                        } else {
+                            showToast('{{ 'Sucesso'   }}', response.message || '{{ 'Tickets carregados com sucesso!'   }}', 'info', 'top-0 end-0');
+                        }
+                    } else {
+                        $('#return-description').html(`<li class="list-group-item">{{ 'Erro: '   }} ${response.message || '{{ 'Nenhum ticket retornado'   }}'}</li>`);
+                        if (typeof glpi_toast_error === 'function') {
+                            glpi_toast_error(response.message || '{{ 'Nenhum ticket retornado'   }}', '{{ 'Erro'   }}', { position: 'top-0 end-0' });
+                        } else {
+                            showToast('{{ 'Erro'   }}', response.message || '{{ 'Nenhum ticket retornado'   }}', 'error', 'top-0 end-0');
+                        }
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log('Erro AJAX:', textStatus, errorThrown);
+                    $('#return-description').html('<li class="list-group-item">{{ 'Erro na requisição AJAX: '  }}' + textStatus + '</li>');
+                    glpi_toast_error('{{ 'Erro na requisição AJAX: '  }}' + textStatus, false);
+                }
+            });
+        }
         $(document).ready(function() {
             if( $('#select-type-zendeskintegration').val() == '' || $('#keywork-search-zendeskintegration').val()){
                 alert("Todos os campos são obrigatórios");
@@ -124,9 +210,10 @@
                             response.data.forEach(function(ticket) {
                                 $('#return-description').append(
                                     '<li class="list-group-item"> <strong>Assunto: </strong>' +
-                                    '<a href="#" target="_blank">' + // Âncora com link para o ticket
+                                    '<label>' + // Âncora com link para o ticket
                                     (ticket.subject || 'Sem assunto') +
-                                    '</a>' +
+                                    '</label>'+
+                                    '<button type="button" class="btn btn-primary btn-sm ms-2" onclick="viewTicket(\'' + (ticket.id || '') + '\')">{{ 'Ver Ticket' }}</button>' +
                                     '<br><strong> Descrição: </strong>'  +
                                     (ticket.description || '{{ 'Sem descrição'  }}').replace(/\\n/g, '<br>') +
                                     '</li>'

@@ -4,6 +4,7 @@ include('../../../inc/includes.php');
 require '../vendor/autoload.php';
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 // Verifica se é uma requisição AJAX
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH'] !== 'XMLHttpRequest') {
@@ -95,6 +96,50 @@ if (isset($_POST['action']) && $_POST['action'] === 'process_ajax') {
     }
 
     // Retorna a resposta em JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
+}
+
+if (isset($_POST['action']) && $_POST['action'] === 'ticket_id') {
+    try {
+        $ticket_id = $_POST['id'] ?? '';
+
+        if (empty($ticket_id)) {
+            echo json_encode([
+                'message' => 'Todos os campos são obrigatório',
+                'status'  => 422,
+            ]);
+            return false;
+//            throw new Exception('O campo Nome é obrigatório.');
+        }
+        // Cria o cliente Guzzle
+        $client = new Client([
+            'base_uri' => 'http://192.168.30.121:3000/',
+            'timeout'  => 10.0,
+        ]);
+        $guzzleResponse = $client->request('GET', 'tickets/'.$ticket_id, [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+                'X-API-Key' => 'e473f24d4325d51a933cc18105bcf311cc10d10c3db12204467b1bfe9df27f7e'
+            ]
+        ]);
+        // Obtém a resposta
+        $statusCode = $guzzleResponse->getStatusCode();
+        $responseBody = json_decode($guzzleResponse->getBody()->getContents(), true);
+
+        if ($statusCode === 200 || $statusCode === 201) {
+            $response['success'] = true;
+            $response['status'] = "200";
+            $response['data'] = $responseBody; // Inclui a resposta do endpoint
+        } else {
+            throw new Exception('Falha ao criar ticket. Status: ' . $statusCode);
+        }
+    }catch (RequestException $e) {
+        $response['message'] = $e->getMessage();
+    }
+// Retorna a resposta em JSON
     header('Content-Type: application/json');
     echo json_encode($response);
     exit;

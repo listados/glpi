@@ -33258,6 +33258,8 @@ body .flatpickr-time input:hover, body .flatpickr-time .flatpickr-am-pm:hover, b
   margin: 0 8px 0 0;
   border-radius: 5px;
 }
+
+
 .kanban .kanban-color-preview.itilstatus.assigned, .kanban .kanban-color-preview.itilstatus.new, .kanban .kanban-column-title.itilstatus.assigned, .kanban .kanban-column-title.itilstatus.new {
   background-color: #49bf4d;
   color: #000f01;
@@ -36320,9 +36322,13 @@ ul.legacy-timeline-actions li i {
  *
  * ---------------------------------------------------------------------
  */
-.itilstatus.assigned, .itilstatus.new, .validationstatus.assigned, .validationstatus.new {
-  color: #49bf4d;
+.itilstatus.assigned,.validationstatus.assigned {
+  color: #FF0000	;
 }
+.itilstatus.new, .validationstatus.new {
+  color: #FFFF00	;
+}
+
 .itilstatus.accepted, .validationstatus.accepted {
   color: green;
 }
@@ -36338,7 +36344,13 @@ ul.legacy-timeline-actions li i {
 .itilstatus.eval, .validationstatus.eval {
   color: lightblue;
 }
-.itilstatus.closed, .itilstatus.solved, .itilstatus.observe, .itilstatus.canceled, .validationstatus.closed, .validationstatus.solved, .validationstatus.observe, .validationstatus.canceled {
+.itilstatus.solved {
+  color: #008000
+}
+.itilstatus.closed {
+  color: #808080
+}
+.itilstatus.observe, .itilstatus.canceled, .validationstatus.closed, .validationstatus.solved, .validationstatus.observe, .validationstatus.canceled {
   color: black;
 }
 .itilstatus.planned, .validationstatus.planned {

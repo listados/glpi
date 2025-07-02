@@ -911,7 +911,7 @@ var templateItilStatus = function(option) {
             classes = 'new fas fa-circle';
             break;
         case 2 :
-            classes = 'assigned far fa-circle';
+            classes = 'assigned fas fa-circle';
             break;
         case 3 :
             classes = 'planned far fa-calendar';
@@ -920,7 +920,7 @@ var templateItilStatus = function(option) {
             classes = 'waiting fas fa-circle';
             break;
         case 5 :
-            classes = 'solved far fa-circle';
+            classes = 'solved fas fa-circle';
             break;
         case 6 :
             classes = 'closed fas fa-circle';
@@ -932,7 +932,7 @@ var templateItilStatus = function(option) {
             classes = 'observe fas fa-eye';
             break;
         case 9 :
-            classes = 'eval far fa-circle';
+            classes = 'eval fas fa-circle';
             break;
         case 10 :
             classes = 'approval fas fa-question-circle';
@@ -941,7 +941,7 @@ var templateItilStatus = function(option) {
             classes = 'test fas fa-question-circle';
             break;
         case 12 :
-            classes = 'qualif far fa-circle';
+            classes = 'qualif fas fa-circle';
             break;
         case 13 :
             classes = 'refused far fa-times-circle';

@@ -1074,7 +1074,7 @@ class Change extends CommonITILObject
 
         return $class == null
          ? ''
-         : 'itilstatus ' . ($solid ? 'fas fa-' : 'far fa-') . $class .
+         : 'itilstatus ' . ($solid ? 'fas fa-' : 'fas fa-') . $class .
          " " . static::getStatusKey($status);
     }
 

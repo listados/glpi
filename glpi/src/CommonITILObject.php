@@ -3678,7 +3678,6 @@ abstract class CommonITILObject extends CommonDBTM
             'templateResult'    => "templateItilStatus",
             'templateSelection' => "templateItilStatus",
         ];
-
         if (is_array($options) && count($options)) {
             foreach ($options as $key => $val) {
                 $p[$key] = $val;
@@ -3705,7 +3704,11 @@ abstract class CommonITILObject extends CommonDBTM
                 $tab = static::getAllStatusArray(false);
                 break;
         }
-
+        foreach ($tab as $key => $label) {
+            if ($label === 'Em atendimento (planejado)') {
+                unset($tab[$key]);
+            }
+        }
         return Dropdown::showFromArray($p['name'], $tab, $p);
     }
 
@@ -4776,7 +4779,7 @@ abstract class CommonITILObject extends CommonDBTM
 
         return $class == null
          ? ''
-         : 'itilstatus ' . ($solid ? 'fas fa-' : 'far fa-') . $class .
+         : 'itilstatus ' . ($solid ? 'fas fa-' : 'fas fa-') . $class .
          " " . static::getStatusKey($status);
     }
 

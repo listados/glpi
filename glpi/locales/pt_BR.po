@@ -6982,7 +6982,7 @@ msgstr "Revisão"
 #: src/Ticket.php:3823
 msgctxt "status"
 msgid "Closed"
-msgstr "Fechado"
+msgstr "Arquivado"
 
 #: src/Change.php:678
 msgctxt "status"
@@ -6998,17 +6998,17 @@ msgstr "Recusado"
 #: src/Ticket.php:3827
 msgctxt "status"
 msgid "Not solved"
-msgstr "Não solucionado"
+msgstr "Não foram encerrados"
 
 #: src/Change.php:684 src/Problem.php:683 src/Ticket.php:3828
 msgctxt "status"
 msgid "Not closed"
-msgstr "Não fechado"
+msgstr "Não arquivado"
 
 #: src/Change.php:686 src/Problem.php:685 src/Ticket.php:3830
 msgctxt "status"
 msgid "Solved + Closed"
-msgstr "Solucionado + Fechado"
+msgstr "Encerrado + Arquivado"
 
 #: src/Change.php:766 src/Dashboard/Widget.php:1935 src/Problem.php:1517
 #: src/Project.php:142
@@ -13079,7 +13079,7 @@ msgstr "tickets pendentes"
 
 #: src/Dashboard/Grid.php:1212 src/Dashboard/Provider.php:386
 msgid "Assigned tickets"
-msgstr "tickets atribuídos"
+msgstr "tickets abertos"
 
 #: src/Dashboard/Grid.php:1213 src/Dashboard/Provider.php:394
 msgid "Planned tickets"
@@ -13087,11 +13087,11 @@ msgstr "tickets planejados"
 
 #: src/Dashboard/Grid.php:1214 src/Dashboard/Provider.php:402
 msgid "Solved tickets"
-msgstr "tickets solucionados"
+msgstr "tickets encerrados"
 
 #: src/Dashboard/Grid.php:1215 src/Dashboard/Provider.php:410
 msgid "Closed tickets"
-msgstr "tickets fechados"
+msgstr "tickets arquivados"
 
 #: src/Dashboard/Grid.php:1238
 #, php-format
@@ -13250,7 +13250,7 @@ msgstr "Atrasado"
 #: src/Dashboard/Provider.php:1262 src/Problem.php:673 src/Ticket.php:3819
 msgctxt "status"
 msgid "Processing (assigned)"
-msgstr "Em atendimento (atribuído)"
+msgstr "Aberto"
 
 #: src/Dashboard/Provider.php:1266 src/Problem.php:674 src/Ticket.php:3820
 msgctxt "status"
@@ -13260,7 +13260,7 @@ msgstr "Em atendimento (planejado)"
 #: src/Dashboard/Provider.php:1274 src/Problem.php:676 src/Ticket.php:3822
 msgctxt "status"
 msgid "Solved"
-msgstr "Solucionado"
+msgstr "Encerrado"
 
 #: src/Dashboard/Provider.php:1552
 msgid "Time to close"
@@ -24201,7 +24201,7 @@ msgstr "Número de tickets"
 #: src/Stat.php:1751 src/Stat/Data/Graph/StatDataSatisfactionSurvey.php:64
 #: src/Stat/Data/Sglobal/StatDataSatisfaction.php:67
 msgid "Tickets"
-msgstr "tickets"
+msgstr "Tickets"
 
 #: src/Stat.php:1757
 msgid "By ticket"

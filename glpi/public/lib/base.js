@@ -11440,7 +11440,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 				// checkboxUnknown: "far fa-window-close",
 				checkboxUnknown:
 					"fas fa-square fancytree-helper-indeterminate-cb",
-				radio: "far fa-circle",
+				radio: "fas fa-circle",
 				radioSelected: "fas fa-circle",
 				radioUnknown: "far fa-dot-circle",
 				dragHelper: "fas fa-arrow-right",

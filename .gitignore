@@ -1,1 +1,17 @@
 .env
+
+# IDE
+.idea/
+.vscode/
+.claude/
+
+# Runtime config (gerado pelo installer do GLPI) - mantem apenas o .htaccess de protecao
+glpi/config/*
+!glpi/config/.htaccess
+
+# Dados de runtime (uploads, cache, logs, sessoes) - mantem apenas o .htaccess de protecao
+glpi/files/*
+!glpi/files/.htaccess
+
+# Plugins instalados via marketplace (vendor, reinstalavel pela interface do GLPI)
+glpi/marketplace/

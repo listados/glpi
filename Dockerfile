@@ -4,6 +4,7 @@ ENV TZ=America/Fortaleza
 
 # Copia config, fontes do GLPI e o init.sh
 COPY config/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY config/php-custom.ini /usr/local/etc/php/conf.d/zz-glpi-custom.ini
 COPY glpi /opt/glpi-src
 COPY logos /opt/glpi-src/pics/logos
 COPY init.sh /init.sh
